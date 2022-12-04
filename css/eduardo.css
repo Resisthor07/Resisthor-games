@@ -4,6 +4,7 @@
     margin: 0px;
 }
 
+
 .Eduardo{
     width: 25vw;
     background-color: #214A68;
@@ -16,6 +17,24 @@
    height: 50px;
 }
 
+.home:hover {
+    background: #032c4aad;
+ }
+
+.home_text{
+    width: 11vw;
+    display: flex;
+    font-family: 'Inter';
+    font: 700;
+    color: white;
+    margin-left: 3vw;
+}
+
+.home_text:hover{
+    font-weight: 800;
+    color: rgb(228, 227, 238);
+}
+
 ol{
     width: 22vw;
     list-style: none;
@@ -25,14 +44,26 @@ ol{
     justify-content: flex-start;
 }
 
+ol:hover{
+    color: white;
+    background-color: rgb(141, 140, 148);
+
+}
+
 li{
-    width: 11;
+    width: 11vw;
     display: flex;
     font-family: 'Inter';
     font: 700;
     color: white;
     margin-left: 3vw;
 }
+
+li:hover{
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+}
+
 
 main {
     display: flex;
