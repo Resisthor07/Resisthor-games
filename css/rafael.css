@@ -84,7 +84,7 @@ body {
 
 .Rafael #favoritos {
     background-position: 0px 12px;
-    background-image: url(../img/star_header.png);
+    background-image: url(../img/header/star_header.png);
     background-repeat: no-repeat;
     text-align: end;
     transition: all .25s;
