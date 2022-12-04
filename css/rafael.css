@@ -76,12 +76,13 @@ body
 
 .Rafael #area_2
 {
+    margin-right: 100px;
     gap: 68px;    
 }
 
 .Rafael #area_3
 {
-    gap: 3px;
+    margin-right: 70px;   
 }
 
 .Rafael #logo
