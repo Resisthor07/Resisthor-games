@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap');
+
+.samir #pai {
+    display: flex;
+}
+
+.samir #cima {
+    height: 100px;
+    background: #082032;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.samir #lado {
+    width: 25vw;
+    height: 100vh;
+    background: #214A68;
+    position: sticky;
+    top: 100px;
+}
+
+.samir #principal {
+    width: 74.9vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.samir button {
+    width: 23vw;
+}
+
+.samir figure {
+    margin: 3.8vw auto;
+}
+
+.samir figure img {
+    width: 62vw;
+    height: 24vw;
+    border-radius: 2vw;
+}
+
+.samir .lista-jogos h3,
+.samir button {
+    font-weight: 700;
+    color: #5E5E5E;
+    font-size: 1.7em;
+    margin: 0;
+}
+
+.samir .lista-jogos ul {
+    display: flex;
+    padding: 0;
+    gap: 2.3vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.samir .lista-jogos ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+}
+
+.samir .lista-jogos ul li small {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.samir .lista-jogos ul li img {
+    width: 20vw;
+    min-width: 100px;
+    margin: 1vw 0;
+    border-radius: 2vw;
+    transition: all 0.3s;
+}
+
+.samir .lista-jogos ul li img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+}
+
+.samir button {
+    font-weight: 400;
+    color: white;
+    background: #214A68;
+    border-radius: 0.8vw;
+    margin: 2.7vw 0;
+    border: 0px;
+    min-height: 4.8vw;
+}
+
+@media (max-width: 768px) {
+
+    .samir .lista-jogos h3,
+    .samir button {
+        font-size: 1.3em;
+    }
+
+    .samir .lista-jogos ul li {
+        font-size: 0.7em;
+    }
+
+}
+
+@media (max-width: 479px) {
+
+    .samir .lista-jogos h3,
+    .samir button {
+        text-align: center;
+    }
+
+    .samir .lista-jogos h3,
+    .samir button {
+        font-size: 1em;
+    }
+
+    .samir .lista-jogos ul li {
+        font-size: 0.6em;
+    }
+}
