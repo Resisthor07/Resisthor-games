@@ -7,12 +7,17 @@
 .samir #cima {
     height: 100px;
     background: #082032;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .samir #lado {
     width: 25vw;
     height: 100vh;
     background: #214A68;
+    position: sticky;
+    top: 100px;
 }
 
 .samir #principal {
@@ -25,7 +30,6 @@
 
 .samir button {
     width: 23vw;
-    height: 5vw;
 }
 
 .samir figure {
@@ -38,7 +42,8 @@
     border-radius: 2vw;
 }
 
-.samir .lista-jogos h3 {
+.samir .lista-jogos h3,
+.samir button {
     font-weight: 700;
     color: #5E5E5E;
     font-size: 1.7em;
@@ -71,10 +76,28 @@
     min-width: 100px;
     margin: 1vw 0;
     border-radius: 2vw;
+    transition: all 0.3s;
+}
+
+.samir .lista-jogos ul li img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+}
+
+.samir button {
+    font-weight: 400;
+    color: white;
+    background: #214A68;
+    border-radius: 0.8vw;
+    margin: 2.7vw 0;
+    border: 0px;
+    min-height: 4.8vw;
 }
 
 @media (max-width: 768px) {
-    .samir .lista-jogos h3 {
+
+    .samir .lista-jogos h3,
+    .samir button {
         font-size: 1.3em;
     }
 
@@ -85,11 +108,14 @@
 }
 
 @media (max-width: 479px) {
-    .samir .lista-jogos h3 {
+
+    .samir .lista-jogos h3,
+    .samir button {
         text-align: center;
     }
 
-    .samir .lista-jogos h3 {
+    .samir .lista-jogos h3,
+    .samir button {
         font-size: 1em;
     }
 
