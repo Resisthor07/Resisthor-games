@@ -12,15 +12,18 @@
 }
 
 .eduardo .home {
-   background: #cbc2c2;
+   
+   background: #032c4aad;
    height: 50px;
 }
 
-.eduardo .home:hover {
-    background: #032c4aad;
+.eduardo .home:focus {
+    cursor: pointer;
+    background: #cbc2c2;
+    background-position: 0px 10px;
  }
 
- .eduardo .home_text{
+.eduardo .home_text{
     width: 11vw;
     display: flex;
     font-family: 'Inter';
@@ -30,6 +33,7 @@
 }
 
 .eduardo .home_text:hover{
+    cursor: pointer;
     font-weight: 800;
     color: rgb(228, 227, 238);
 }
@@ -44,6 +48,7 @@
 }
 
 .eduardo ol:hover{
+    cursor: pointer;
     color: white;
     background-color: rgb(141, 140, 148);
 
