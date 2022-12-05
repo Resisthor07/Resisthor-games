@@ -5,13 +5,20 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
         'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
     }
 }).then((response) => {
-    response.json().then(dados => carregarMais(dados));
+    response.json().then(dados => {
+        dadosServidor = dados;
+        carregarMais(dadosServidor);
+    });
 }).catch((err) => {
     console.log("Erro!");
 });
 
+let dadosServidor = [];
+let botaoCarregar = document.getElementById("carregar-mais");
 let primeiroCarregamentoImagem = true;
 let controle = 0;
+
+botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor) });
 
 function carregarMais(dados) {
 
@@ -23,9 +30,11 @@ function carregarMais(dados) {
     if (primeiroCarregamentoImagem) {
         let imagemBanner = document.getElementById("samir-imagem-principal");
         imagemBanner.innerHTML = `<img src="${dados[controle].thumbnail}" alt="${dados[controle].title}"/>`;
+        primeiroCarregamentoImagem = false;
+        controle++;
     }
 
-    for (i = 1; i <= 3 && controle < dados.length; i++) {
+    for (i = 0; i <= 3 && controle < dados.length; i++) {
 
         let tituloGenero = document.createElement("h3");
         let listaNaoOrdenada = document.createElement("ul");
@@ -49,6 +58,10 @@ function carregarMais(dados) {
             tituloPequeno.innerText = dados[controle].title;
 
             controle++;
+
+            if (controle <= 9 && i == 3) {
+                j = 3;
+            }
         }
     }
 }

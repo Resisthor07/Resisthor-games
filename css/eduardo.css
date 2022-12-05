@@ -1,7 +1,6 @@
 .eduardo #img {
-    width: 2vw;
-    height: 30px;
-    margin: 0px;
+    width: 3vw;
+    margin: 2vw;
 }
 
 .eduardo {
@@ -11,61 +10,86 @@
     flex-direction: column;
 }
 
-.eduardo .home {
+.eduardo #action,
+#battle,
+#fight,
+#racing,
+#sci,
+#shooting,
+#sports,
+#strategy {
+    width: 25vw;
+}
 
+.eduardo .home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25vw;
     background: #032c4aad;
     height: 50px;
 }
 
-.eduardo .home:focus {
+.eduardo #bot_home {
+    background-color: #032c4aad;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0;
+    padding: 0%;
+    color: white;
+    width: 20vw;
+    height: 50px;
+    font-family: 'Inter';
+    font-size: 1.5vw;
+}
+
+.eduardo #bot_home:focus {
     cursor: pointer;
     background: #cbc2c2;
     background-position: 0px 10px;
 }
 
-.eduardo .home_text {
-    width: 11vw;
+.eduardo #bot_action,
+#bot_battle,
+#bot_figtht,
+#bot_racing,
+#bot_sci,
+#bot_shooting,
+#bot_sports,
+#bot_strategy {
+    background-color: #214A68;
     display: flex;
-    font-family: 'Inter';
-    font: 700;
+    justify-content: flex-start;
+    border: 0;
+    padding: 0%;
     color: white;
-    margin-left: 3vw;
+    width: 25vw;
+    height: 50px;
+    font-family: 'Inter';
+    font-size: 2vw;
 }
 
-.eduardo .home_text:hover {
+.eduardo #bot_action:focus,
+#bot_battle:focus,
+#bot_figtht:focus,
+#bot_racing:focus,
+#bot_sci:focus,
+#bot_shooting:focus,
+#bot_sports:focus,
+#bot_strategy:focus {
     cursor: pointer;
-    font-weight: 800;
-    color: rgb(228, 227, 238);
+    background: #cbc2c2;
+    background-position: 0px 10px;
 }
 
-.eduardo ol {
-    width: 22vw;
+.eduardo div {
+    width: 25vw;
     list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-}
-
-.eduardo ol:hover {
-    cursor: pointer;
-    color: white;
-    background-color: rgb(141, 140, 148);
-
-}
-
-.eduardo li {
-    width: 11vw;
-    display: flex;
-    font-family: 'Inter';
-    font: 700;
-    color: white;
-    margin-left: 3vw;
-}
-
-.eduardo li:hover {
-    font-weight: 900;
-    color: rgb(0, 0, 0);
 }
 
 main {
