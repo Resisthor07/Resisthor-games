@@ -55,6 +55,7 @@ function carregarMais(dados, filtro) {
                                         <li><img src="${dados[controle].thumbnail}" alt="${dados[controle].title}"><small>${dados[controle].title}</small></li>
                                         <li><img src="${dados[controle + 1].thumbnail}" alt="${dados[controle].title}"><small>${dados[controle].title}</small></li>
                                         <li><img src="${dados[controle + 2].thumbnail}" alt="${dados[controle].title}"><small>${dados[controle].title}</small></li>${decimoItem}
+                                        <input type="button" name="input_preferidos" id="input_preferidos" value="Add preferidos" onclick="push_id(${dados[controle].id})">
                                     `;
 
 
