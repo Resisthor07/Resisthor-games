@@ -1,27 +1,29 @@
-#img {
+.eduardo #img {
     width: 2vw;
     height: 30px;
     margin: 0px;
 }
 
-
-.Eduardo {
+.eduardo {
     width: 25vw;
     background-color: #214A68;
     display: flex;
     flex-direction: column;
 }
 
-.home {
-    background: #cbc2c2;
+.eduardo .home {
+
+    background: #032c4aad;
     height: 50px;
 }
 
-.home:hover {
-    background: #032c4aad;
+.eduardo .home:focus {
+    cursor: pointer;
+    background: #cbc2c2;
+    background-position: 0px 10px;
 }
 
-.home_text {
+.eduardo .home_text {
     width: 11vw;
     display: flex;
     font-family: 'Inter';
@@ -30,12 +32,13 @@
     margin-left: 3vw;
 }
 
-.home_text:hover {
+.eduardo .home_text:hover {
+    cursor: pointer;
     font-weight: 800;
     color: rgb(228, 227, 238);
 }
 
-ol {
+.eduardo ol {
     width: 22vw;
     list-style: none;
     display: flex;
@@ -44,13 +47,14 @@ ol {
     justify-content: flex-start;
 }
 
-ol:hover {
+.eduardo ol:hover {
+    cursor: pointer;
     color: white;
     background-color: rgb(141, 140, 148);
 
 }
 
-li {
+.eduardo li {
     width: 11vw;
     display: flex;
     font-family: 'Inter';
@@ -59,7 +63,7 @@ li {
     margin-left: 3vw;
 }
 
-li:hover {
+.eduardo li:hover {
     font-weight: 900;
     color: rgb(0, 0, 0);
 }
