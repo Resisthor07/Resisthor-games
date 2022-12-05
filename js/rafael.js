@@ -35,14 +35,13 @@ function api_plataforma(opc)
 
     const options = {
         method: 'GET',
-        params: {platform: plat},
         headers: {
-          'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+          'X-RapidAPI-Key': 'e078caf048msh54b295ff558ce1cp14c4e7jsncbf5f00838c0',
           'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
 
-    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games`, options)
+    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plat}`, options)
         .then((response) => {
             response.json()
                 .then(lista => console.log(lista));
