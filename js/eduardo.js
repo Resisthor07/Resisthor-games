@@ -1,8 +1,12 @@
 //fetch("https://www.freetogame.com/api/games");
 
+botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
+let varAcao;
+let acao=0;
+let decimoItem=0;
 
 let bot_action = document.getElementById("bot_action");
-bot_action = addEventListener ('click', acao);
+bot_action = addEventListener ('click', selecionaAcao);
 
 
 let bot_battle = document.getElementById("bot_battle");
@@ -35,36 +39,42 @@ const options = {
 	}
 };
 
-function acao(){
-	let enviaAcao = ''
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=action', options)
 
-	.then(response => response.json())
+function selecionaAcao(){
 
-	.then(data => {
-		console.log(response) 
-		carregarMais(data)})
-
-	.catch(err => console.error(err));
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=action', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
 
-let amostra =[{"id":510,"title":"Drifters saqueiam a galáxia",
-"thumbnail":"oi",
-"short_description":"Pegue seus Driftpacs e ganchos, é hora de saquear. Escolha um personagem e mergulhe no jogo de tiro em equipe do Esquilo Cego, Drifters Loot the Galaxy.",
-"game_url":"eduardo ",
-"genre":"Shooter","platform":"PC (Windows)","publisher":" Mobile Technologies LLC",
-"release_date":"2019-11-27",
-"freetogame_profile_url":"bem"}]
-
-carregarMais(amostra)
-
 function batalha(){
 
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=battle-royale', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=Battle-Royale', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
 
@@ -121,3 +131,20 @@ function estrategia(){
 	.catch(err => console.error(err));
 
 }
+
+
+/*
+fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});*/
