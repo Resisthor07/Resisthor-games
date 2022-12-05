@@ -1,5 +1,6 @@
 //fetch("https://www.freetogame.com/api/games");
 
+
 let bot_action = document.getElementById("bot_action");
 bot_action = addEventListener ('click', acao);
 
@@ -35,13 +36,28 @@ const options = {
 };
 
 function acao(){
-
+	let enviaAcao = ''
 	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=action', options)
+
 	.then(response => response.json())
-	.then(response => console.log(response))
+
+	.then(data => {
+		console.log(response) 
+		carregarMais(data)})
+
 	.catch(err => console.error(err));
 
 }
+
+let amostra =[{"id":510,"title":"Drifters saqueiam a galáxia",
+"thumbnail":"oi",
+"short_description":"Pegue seus Driftpacs e ganchos, é hora de saquear. Escolha um personagem e mergulhe no jogo de tiro em equipe do Esquilo Cego, Drifters Loot the Galaxy.",
+"game_url":"eduardo ",
+"genre":"Shooter","platform":"PC (Windows)","publisher":" Mobile Technologies LLC",
+"release_date":"2019-11-27",
+"freetogame_profile_url":"bem"}]
+
+carregarMais(amostra)
 
 function batalha(){
 
