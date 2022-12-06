@@ -4,10 +4,7 @@ let elementos =
         document.getElementById("browser"),
         document.getElementById("all")
     ];
-    console.log(elementos);
-let botaoPCRafael = document.getElementById("pc");
-let botaoBrowserRafael = document.getElementById("browser");
-let botaoAllRafael = document.getElementById("all");
+    
 let plataformaRafael;
 
 
