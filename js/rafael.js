@@ -1,38 +1,39 @@
-let botao_pc = document.getElementById("pc");
-let botao_browser = document.getElementById("browser");
-let botao_all = document.getElementById("all");
 
-botao_pc.addEventListener("click", function(){
-    api_plataforma(1)}
-    );
-botao_browser.addEventListener("click", function(){
-    api_plataforma(2)}
-    );
-botao_all.addEventListener("click", function(){
-    api_plataforma(3)}
-    );
+let botaoPCRafael = document.getElementById("pc");
+let botaoBrowserRafael = document.getElementById("browser");
+let botaoAllRafael = document.getElementById("all");
+let plataformaRafael;
 
-
-
-function api_plataforma(opc)
+function selecionaOpcRafael(opc)
 {
-    let plat 
     
     if(opc==1)
     {
-        plat = "pc";
+        plataformaRafael = "pc";
+        buscaAPIRafael();
+        return;
     }
     if(opc==2)
     {
-        plat = "browser";
+        plataformaRafael = "browser";
+        buscaAPIRafael();
+        return;
     }
     if(opc==3)
     {
-        plat = "all";
+        plataformaRafael = "all";
+        buscaAPIRafael();
+        return;
     }
+}
 
-    console.log(plat);
+function mudaEstiloRafael(ids)
+{
 
+}
+
+function buscaAPIRafael()
+{
     const options = {
         method: 'GET',
         headers: {
@@ -41,10 +42,20 @@ function api_plataforma(opc)
         }
     };
 
-    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plat}`, options)
+    fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataformaRafael}`, options)
         .then((response) => {
             response.json()
                 .then(lista => console.log(lista));
         })
-        .catch();
+        .catch((err) => console.log(err));
 }
+
+botaoPCRafael.addEventListener("click", function(){
+    selecionaOpcRafael(1)}
+    );
+botaoBrowserRafael.addEventListener("click", function(){
+    selecionaOpcRafael(2)}
+    );
+botaoAllRafael.addEventListener("click", function(){
+    selecionaOpcRafael(3)}
+    );
