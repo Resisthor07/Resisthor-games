@@ -45,13 +45,14 @@ body {
     
 }
 
+/*
 .Rafael #pc:hover, 
 .Rafael #browser:hover, 
 .Rafael #all:hover
 {
     background: rgba(245, 245, 245, 0.25);
     transition: all .25s;
-}
+}*/
 
 /*.Rafael input:focus {
     background: rgba(245, 245, 245, 0.25);

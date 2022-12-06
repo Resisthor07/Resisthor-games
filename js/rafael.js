@@ -1,8 +1,32 @@
-
+let elementos =   
+    [
+        document.getElementById("pc"),
+        document.getElementById("browser"),
+        document.getElementById("all")
+    ];
+    console.log(elementos);
 let botaoPCRafael = document.getElementById("pc");
 let botaoBrowserRafael = document.getElementById("browser");
 let botaoAllRafael = document.getElementById("all");
 let plataformaRafael;
+
+
+
+function hoverOnRafael(id)
+{
+    let elemento = document.getElementById(id);
+
+    elemento.style.background = "rgba(245, 245, 245, 0.25)";
+}
+
+function hoverOffRafael(id)
+{
+    let elemento = document.getElementById(id);
+
+    elemento.style.background = "none";
+}
+
+
 
 function selecionaOpcRafael(opc)
 {
@@ -35,7 +59,6 @@ function mudaEstiloRafael(ids)
     let elemento;
     for(e in ids)
     {
-        console.log(ids[e]);
         if(e == 0)
         {
             estilo = document.createElement("style");
@@ -114,12 +137,18 @@ function buscaAPIRafael()
         .catch((err) => console.log(err));
 }
 
-botaoPCRafael.addEventListener("click", function(){
-    selecionaOpcRafael(1)}
-    );
-botaoBrowserRafael.addEventListener("click", function(){
-    selecionaOpcRafael(2)}
-    );
-botaoAllRafael.addEventListener("click", function(){
-    selecionaOpcRafael(3)}
-    );
+elementos[0].addEventListener("click", () => selecionaOpcRafael(1));
+
+elementos[1].addEventListener("click", () => selecionaOpcRafael(2));
+
+elementos[2].addEventListener("click", () => selecionaOpcRafael(3));
+
+
+elementos[0].addEventListener("mouseenter", () => hoverOnRafael("pc"));
+elementos[0].addEventListener("mouseleave", () => hoverOffRafael("pc"));
+
+elementos[1].addEventListener("mouseenter", () => hoverOnRafael("browser"));
+elementos[1].addEventListener("mouseleave", () => hoverOffRafael("browser"));
+
+elementos[2].addEventListener("mouseenter", () => hoverOnRafael("all"));
+elementos[2].addEventListener("mouseleave", () => hoverOffRafael("all"));
