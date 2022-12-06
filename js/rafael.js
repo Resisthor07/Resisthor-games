@@ -143,7 +143,7 @@ elementos[1].addEventListener("click", () => selecionaOpcRafael(2));
 
 elementos[2].addEventListener("click", () => selecionaOpcRafael(3));
 
-
+/* 
 elementos[0].addEventListener("mouseenter", () => hoverOnRafael("pc"));
 elementos[0].addEventListener("mouseleave", () => hoverOffRafael("pc"));
 
@@ -151,4 +151,4 @@ elementos[1].addEventListener("mouseenter", () => hoverOnRafael("browser"));
 elementos[1].addEventListener("mouseleave", () => hoverOffRafael("browser"));
 
 elementos[2].addEventListener("mouseenter", () => hoverOnRafael("all"));
-elementos[2].addEventListener("mouseleave", () => hoverOffRafael("all"));
+elementos[2].addEventListener("mouseleave", () => hoverOffRafael("all")); */
