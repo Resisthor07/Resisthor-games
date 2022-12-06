@@ -40,14 +40,14 @@ function mudaEstiloRafael(ids)
         {
             estilo = document.createElement("style");
             elemento = document.getElementById(ids[e]);
-            /*
+            
             elemento.style.background = "rgba(245, 245, 245, 0.25)";
             elemento.style.border = "solid 4px rgb(68, 68, 68)";
             elemento.style.borderTop = "none";
             elemento.style.borderRight = "none";
             elemento.style.borderLeft = "none";
-            */
-            
+        
+            /*
             elemento.style.cssText =
             `
             background: rgba(245, 245, 245, 0.25);
@@ -57,19 +57,21 @@ function mudaEstiloRafael(ids)
             border-right: none;
             border-left: none;
             `;
-
+            */
 
         }
         else
         {
             elemento = document.getElementById(ids[e]);
 
-            /*
+            
             elemento.style.border = "hidden";
             elemento.style.background = "none";
             elemento.style.transition = "all .75s";
-            */            
+                        
 
+
+            /*
             elemento.style.cssText =
             `
             color: #ffffff;
@@ -88,14 +90,8 @@ function mudaEstiloRafael(ids)
             transition: all .75s;
 
             cursor: pointer;
-
-            :hover
-            {
-                background: rgba(245, 245, 245, 0.25);
-                transition: all .25s;
-            }
             `;
-
+            */
         }
     }
 }
