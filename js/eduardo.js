@@ -1,6 +1,7 @@
 //fetch("https://www.freetogame.com/api/games");
 
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
+
 let varAcao;
 let acao=0;
 let decimoItem=0;
@@ -31,17 +32,9 @@ let bot_strategy = document.getElementById("bot_strategy");
 bot_strategy = addEventListener ('click', estrategia );
 
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '59aba074b0msh4dcbc270724c3f0p164e04jsn23fd06b88edb',
-		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-	}
-};
-
 
 function selecionaAcao(){
-
+	
 	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=action', {
     method: "GET",
     headers: {
@@ -78,60 +71,119 @@ function batalha(){
 
 }
 
+
 function luta(){
 
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=fighting', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=fighting', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
 
 function corrida(){
 
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=racing', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=racing', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
 
 function sci(){
 
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=sci-fi', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=sci-fi', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
+
 
 function tiro(){
 
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=shooter', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=shooter', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
 
-function esportes(){
-
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=sports', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+function esportes(){ 
+fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=sports', {
+    method: "GET",
+    headers: {
+        'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+}).then((response) => {
+    response.json().then(dados => {
+        varAcao = dados;
+        carregarMais(varAcao, filtro);
+    });
+}).catch((err) => {
+    console.log("Erro!");
+});
 
 }
 
-function estrategia(){
-
-	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=strategy', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
+function estrategia(){ 
+	fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=strategy', {
+		method: "GET",
+		headers: {
+			'X-RapidAPI-Key': 'cb269c757dmshd8dc4b1605c922dp186c0djsn0a6338dca307',
+			'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+		}
+	}).then((response) => {
+		response.json().then(dados => {
+			varAcao = dados;
+			carregarMais(varAcao, filtro);
+		});
+	}).catch((err) => {
+		console.log("Erro!");
+	});
+	
 }
-
 
 /*
 fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
