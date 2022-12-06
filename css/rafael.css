@@ -22,7 +22,10 @@ body {
     align-items: center;
 }
 
-.Rafael input {
+.Rafael #pc, 
+.Rafael #browser, 
+.Rafael #all
+{
     color: #ffffff;
     font-family: 'Poppins';
     font-style: normal;
@@ -36,26 +39,28 @@ body {
     border-radius: 3px;
     background: none;
 
-    transition: all 1s;
+    transition: all .75s;
 
     cursor: pointer;
+    
 }
 
-.Rafael input:hover {
-
+.Rafael #pc:hover, 
+.Rafael #browser:hover, 
+.Rafael #all:hover
+{
     background: rgba(245, 245, 245, 0.25);
     transition: all .25s;
-
 }
 
-.Rafael input:focus {
+/*.Rafael input:focus {
     background: rgba(245, 245, 245, 0.25);
 
     border: solid 4px rgb(68, 68, 68);
     border-top: none;
     border-right: none;
     border-left: none;
-}
+}*/
 
 .Rafael #area_1 {
     margin-right: 130px;
@@ -90,6 +95,6 @@ body {
     transition: all .25s;
 }
 
-.Rafael #favoritos:focus {
+/*.Rafael #favoritos:focus {
     background-position: 0px 10px;
-}
+}*/
