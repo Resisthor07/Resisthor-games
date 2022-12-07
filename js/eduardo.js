@@ -2,7 +2,8 @@
 
 let decimoItem=0;
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
-
+let menu;
+let categoriaSelecionada;
 
 let botao =[
 	document.getElementById("bot_action"),
@@ -28,6 +29,8 @@ botao[7].addEventListener("click", () => selecionaFiltro(8));
 
 function selecionaFiltro(opc)
 {
+    categoriaSelecionada = true;
+
     if(opc==1)
     {
         menu = "action";
