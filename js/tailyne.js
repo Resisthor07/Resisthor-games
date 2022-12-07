@@ -1,4 +1,8 @@
-function selecionaOpcTailyne(){
+if (boolRafael==1 && boolEduardo==1) {
+    filtroTailyne();
+}
+
+function filtroTailyne(){
 	
 	const options = {
 		
