@@ -115,6 +115,7 @@ function buscaAPIRafael()
                 .then(lista => console.log(lista));
         })
         .catch((err) => console.log(err));
+
 }
 
 elementosRafael[0].addEventListener("click", () => selecionaOpcRafael(1));

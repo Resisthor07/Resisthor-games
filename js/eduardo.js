@@ -91,9 +91,12 @@ function selecionaOpc(){
 	fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${menu}`, options)
 		.then(response => response.json())
 		.then(response => console.log(response))
-		.catch(err => console.error(err));
+	    .catch(err => console.error(err));
 
+        
 }
+
+
 /*
 fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
     method: "GET",
