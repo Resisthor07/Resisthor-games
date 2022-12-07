@@ -13,49 +13,42 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
     console.log("Erro!");
 });
 
-let listaExibida = document.getElementById("principal");
-let containerDeJogos = document.createElement("div");
-let jogosCarregados;
-
-listaExibida.appendChild(containerDeJogos);
-
 let dadosServidor = [];
 let botaoCarregar = document.getElementById("carregar-mais");
-let botaoRemover = document.getElementById("remover");
-let botaoRemoverTudo = document.getElementById("remover-tudo");
-let primeiroCarregamento = true;
+let primeiroCarregamentoImagem = true;
 let controle = 0;
 let filtro = "nenhum";
 
-botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro, true) });
-botaoRemover.addEventListener("click", () => limparTela(false));
-botaoRemoverTudo.addEventListener("click", () => limparTela(true));
+botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
 
-function carregarMais(dados, filtro, adicao) {
-    let stringHtml = "";
-    let arredondar = true;
+function carregarMais(dados, filtro) {
 
-    containerDeJogos.className = "lista-jogos";
+    let listaExibida = document.getElementById("principal");
+    let jogos = document.createElement("div");
+    listaExibida.appendChild(jogos);
+    jogos.className = "lista-jogos";
 
-    if (primeiroCarregamento) {
+    if (primeiroCarregamentoImagem) {
         let imagemBanner = document.getElementById("samir-imagem-principal");
         imagemBanner.innerHTML = `<img src="${dados[controle].thumbnail}" alt="${dados[controle].title}"/>`;
+        primeiroCarregamentoImagem = false;
         controle++;
-        arredondar = false;
     }
 
-    for (i = 0; i < 3 && controle < dados.length && !adicao; i++) {
+    for (i = 0; i < 3 && controle < dados.length; i++) {
 
-        let stringLinhas = "";
+        let tituloGenero = document.createElement("h3");
+        let listaNaoOrdenada = document.createElement("ul");
 
-        for (j = 1; j <= 3; j++) {
+        jogos.appendChild(tituloGenero);
+        jogos.appendChild(listaNaoOrdenada);
+        tituloGenero.innerText = dados[i].genre;
+
+        controle += 3;
+
+        if (controle >= 11) {
+            decimoItem = `<li><img src="${dados[controle].thumbnail}" alt="${dados[controle].title}"><small>${dados[controle].title}</small></li>`;
             controle++;
-            stringLinhas += `
-                            <li>
-                                <img src="${dados[controle].thumbnail}" alt="${dados[controle].title}">
-                                <small>${dados[controle].title}</small>
-                            </li>
-                            `;
         }
 
         listaNaoOrdenada.innerHTML = `
@@ -66,51 +59,22 @@ function carregarMais(dados, filtro, adicao) {
                                     `;
 
 
-
-    if (adicao) {
-
-        let stringLinhas = "";
-        let stringTemp = jogosCarregados.innerHTML;
-
-        for (j = 0; j < 10; j++) {
-
-            controle++;
-            stringLinhas += `
-                                <li>
-                                    <img src="${dados[controle].thumbnail}" alt="${dados[controle].title}">
-                                    <small>${dados[controle].title}</small>
-                                </li>
-                                `;
-        }
-
-        stringTemp += stringLinhas;
-
-        jogosCarregados.innerHTML = stringTemp;
-    }
-
-    if (primeiroCarregamento) {
-        containerDeJogos.innerHTML = stringHtml;
-        jogosCarregados = document.createElement("ul");
-        containerDeJogos.appendChild(jogosCarregados);
-        primeiroCarregamento = false;
-    }
-
-    //listaContainerDeJogos.push(containerDeJogos);
-
-    console.log(containerDeJogos);
-}
-
-function limparTela(removerTudo) {
-
-    if (!removerTudo) {
-        listaExibida.removeChild(listaContainerDeJogos[listaContainerDeJogos.length - 1].jogos);
-        listaContainerDeJogos.pop();
-        controle = 0;
-    }
-
-    for (i = listaContainerDeJogos.length - 1; (i >= 0) && removerTudo; i--) {
-        listaExibida.removeChild(listaContainerDeJogos[i].jogos);
-        listaContainerDeJogos.pop();
-        controle = 0;
+        /*
+                for (j = 0; j < 3; j++) {
+        
+                    let itemLista = document.createElement("li");
+                    let imagemJogo = document.createElement("img");
+                    let tituloPequeno = document.createElement("small");
+        
+                    listaNaoOrdenada.appendChild(itemLista);
+                    itemLista.appendChild(imagemJogo);
+                    itemLista.appendChild(tituloPequeno);
+        
+                    imagemJogo.setAttribute("src", dados[controle].thumbnail);
+                    imagemJogo.setAttribute("alt", dados[controle].title);
+                    tituloPequeno.innerText = dados[controle].title;
+        
+                    controle++;
+                }*/
     }
 }

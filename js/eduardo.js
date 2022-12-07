@@ -1,4 +1,5 @@
 //fetch("https://www.freetogame.com/api/games");
+let decimoItem;
 
 let botao =[
 	document.getElementById("bot_action"),
