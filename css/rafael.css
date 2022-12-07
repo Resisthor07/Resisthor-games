@@ -22,29 +22,6 @@ body {
     align-items: center;
 }
 
-/* .Rafael #pc, 
-.Rafael #browser 
-.Rafael #all 
-{
-    color: #ffffff;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-
-    width: 125px;
-    height: 48px;
-    border: hidden;
-    border-radius: 3px;
-    background: none;
-
-    transition: all .75s;
-
-    cursor: pointer;
-    
-} */
-
 .Rafael .botao-ativo
 {
     transition: all .25s;
@@ -95,18 +72,6 @@ body {
     transition: all .25s;
 }
 
-
-
-
-/*.Rafael input:focus {
-    background: rgba(245, 245, 245, 0.25);
-
-    border: solid 4px rgb(68, 68, 68);
-    border-top: none;
-    border-right: none;
-    border-left: none;
-}*/
-
 .Rafael #area_1 {
     margin-right: 130px;
     gap: 15px;
@@ -149,7 +114,7 @@ body {
     border-radius: 3px;
     background: none;
 
-    background-position: 0px 12px;
+    background-position: 3px 12px;
     background-image: url(../img/header/star_header.png);
     background-repeat: no-repeat;
     text-align: end;
@@ -159,7 +124,7 @@ body {
 {
     background: rgba(245, 245, 245, 0.25);
     background-image: url(../img/header/star_header.png);
-    background-position: 0px 12px;
+    background-position: 3px 12px;
     background-repeat: no-repeat;
 }
 
@@ -187,7 +152,7 @@ body {
 
     
     background-image: url(../img/header/star_header.png);
-    background-position: 0px 10px;
+    background-position: 3px 10px;
     background-repeat: no-repeat;
     text-align: end;
 }
@@ -195,6 +160,6 @@ body {
 .Rafael .botao-favorito-ativo:hover
 {
     background-image: url(../img/header/star_header.png);
-    background-position: 0px 10px;
+    background-position: 3px 10px;
     background-repeat: no-repeat;
 }
