@@ -114,7 +114,7 @@ body {
     border-radius: 3px;
     background: none;
 
-    background-position: 0px 12px;
+    background-position: 3px 12px;
     background-image: url(../img/header/star_header.png);
     background-repeat: no-repeat;
     text-align: end;
@@ -124,7 +124,7 @@ body {
 {
     background: rgba(245, 245, 245, 0.25);
     background-image: url(../img/header/star_header.png);
-    background-position: 0px 12px;
+    background-position: 3px 12px;
     background-repeat: no-repeat;
 }
 
@@ -152,7 +152,7 @@ body {
 
     
     background-image: url(../img/header/star_header.png);
-    background-position: 0px 10px;
+    background-position: 3px 10px;
     background-repeat: no-repeat;
     text-align: end;
 }
@@ -160,6 +160,6 @@ body {
 .Rafael .botao-favorito-ativo:hover
 {
     background-image: url(../img/header/star_header.png);
-    background-position: 0px 10px;
+    background-position: 3px 10px;
     background-repeat: no-repeat;
 }
