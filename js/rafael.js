@@ -7,6 +7,7 @@ let elementosRafael =
     ];
     
 let plataformaRafael;
+let boolRafael = 0;
 let controladorRafael = -1;
 
 
@@ -16,6 +17,7 @@ function selecionaOpcRafael(opc)
     {
         mudaEstiloRafael(opc);
         controladorRafael = -1;
+        boolRafael = 0;
         return;
     }
 
@@ -25,7 +27,15 @@ function selecionaOpcRafael(opc)
     {
         plataformaRafael = "pc";
         mudaEstiloRafael(opc);
+
+        /*if(boolRafael == 1 && boolEduardo == 1) 
+        {
+            
+            return;
+        }*/
+
         buscaAPIRafael();
+        boolRafael = 1;
         return;
     }
     if(opc == 1)
@@ -33,6 +43,7 @@ function selecionaOpcRafael(opc)
         plataformaRafael = "browser";
         mudaEstiloRafael(opc);
         buscaAPIRafael();
+        boolRafael = 1;
         return;
     }
     if(opc == 2)
@@ -40,11 +51,13 @@ function selecionaOpcRafael(opc)
         plataformaRafael = "all";
         mudaEstiloRafael(opc);
         buscaAPIRafael();
+        boolRafael = 1;
         return;
     }
     if(opc == 3)
     {
         mudaEstiloRafael(opc);
+        boolRafael = 0;
         return;
     }
 }
