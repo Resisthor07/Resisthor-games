@@ -14,48 +14,46 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
 });
 
 let listaExibida = document.getElementById("principal");
-let listaContainerDeJogos = [];
+let containerDeJogos = document.createElement("div");
+let jogosCarregados;
+
+listaExibida.appendChild(containerDeJogos);
 
 let dadosServidor = [];
 let botaoCarregar = document.getElementById("carregar-mais");
 let botaoRemover = document.getElementById("remover");
 let botaoRemoverTudo = document.getElementById("remover-tudo");
-let primeiroCarregamentoImagem = true;
+let primeiroCarregamento = true;
 let controle = 0;
 let filtro = "nenhum";
 
-botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
+botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro, true) });
 botaoRemover.addEventListener("click", () => limparTela(false));
 botaoRemoverTudo.addEventListener("click", () => limparTela(true));
 
-function carregarMais(dados, filtro) {
-
-    let containerDeJogos = {
-        jogos: document.createElement("div")
-    }
-
+function carregarMais(dados, filtro, adicao) {
     let stringHtml = "";
+    let arredondar = true;
 
-    listaExibida.appendChild(containerDeJogos.jogos);
-    containerDeJogos.jogos.className = "lista-jogos";
+    containerDeJogos.className = "lista-jogos";
 
-    if (primeiroCarregamentoImagem) {
+    if (primeiroCarregamento) {
         let imagemBanner = document.getElementById("samir-imagem-principal");
         imagemBanner.innerHTML = `<img src="${dados[controle].thumbnail}" alt="${dados[controle].title}"/>`;
-        primeiroCarregamentoImagem = false;
         controle++;
+        arredondar = false;
     }
 
-    for (i = 0; i < 3 && controle < dados.length; i++) {
+    for (i = 0; i < 3 && controle < dados.length && !adicao; i++) {
 
         let stringLinhas = "";
-        controle += 3;
 
         for (j = 1; j <= 3; j++) {
-
+            controle++;
             stringLinhas += `
                             <li>
-                                <img src="${dados[controle + j].thumbnail}" alt="${dados[controle + j].title}"><small>${dados[controle + j].title}</small>
+                                <img src="${dados[controle].thumbnail}" alt="${dados[controle].title}">
+                                <small>${dados[controle].title}</small>
                             </li>
                             `;
         }
@@ -64,11 +62,39 @@ function carregarMais(dados, filtro) {
                       <ul>${stringLinhas}</ul>`;
     }
 
-    containerDeJogos.jogos.innerHTML = stringHtml;
 
-    listaContainerDeJogos.push(containerDeJogos);
 
-    console.log(listaContainerDeJogos);
+    if (adicao) {
+
+        let stringLinhas = "";
+        let stringTemp = jogosCarregados.innerHTML;
+
+        for (j = 0; j < 10; j++) {
+
+            controle++;
+            stringLinhas += `
+                                <li>
+                                    <img src="${dados[controle].thumbnail}" alt="${dados[controle].title}">
+                                    <small>${dados[controle].title}</small>
+                                </li>
+                                `;
+        }
+
+        stringTemp += stringLinhas;
+
+        jogosCarregados.innerHTML = stringTemp;
+    }
+
+    if (primeiroCarregamento) {
+        containerDeJogos.innerHTML = stringHtml;
+        jogosCarregados = document.createElement("ul");
+        containerDeJogos.appendChild(jogosCarregados);
+        primeiroCarregamento = false;
+    }
+
+    //listaContainerDeJogos.push(containerDeJogos);
+
+    console.log(containerDeJogos);
 }
 
 function limparTela(removerTudo) {
