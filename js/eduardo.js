@@ -3,7 +3,19 @@
 let decimoItem=0;
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
 let menu;
-let categoriaSelecionada;
+let boolEduardo;
+
+
+let divBot =[
+	document.getElementById("action"),
+	document.getElementById("battle"),
+	document.getElementById("fight"),
+	document.getElementById("racing"),
+	document.getElementById("sci"),
+	document.getElementById("shooting"),
+	document.getElementById("sports"),
+	document.getElementById("strategy")
+];
 
 let botao =[
 	document.getElementById("bot_action"),
@@ -15,6 +27,11 @@ let botao =[
 	document.getElementById("bot_sports"),
 	document.getElementById("bot_strategy")
 ];
+
+let botHome = document.getElementById("bot_home");
+botHome.addEventListener("click", () => selecionaFiltro(9));
+
+let divHome = document.getElementById("area_home");
 
 
 botao[0].addEventListener("click", () => selecionaFiltro(1));
@@ -29,61 +46,73 @@ botao[7].addEventListener("click", () => selecionaFiltro(8));
 
 function selecionaFiltro(opc)
 {
-    categoriaSelecionada = true;
+
 
     if(opc==1)
     {
         menu = "action";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
     }
     if(opc==2)
     {
         menu = "Battle-Royale";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
     }
     if(opc==3)
     {
         menu = "fighting";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
     }
 	if(opc==4)
     {
         menu = "racing";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
     }
 	if(opc==5)
     {
         menu = "sci-fi";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
     }
     if(opc==6)
     {
         menu = "shooter";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
     }
     if(opc==7)
     {
         menu = "sports";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
         return;
-    } if(opc==8)
+    } 
+    if(opc==8)
     {
         menu = "strategy";
-        selecionaOpc();
+        estilizaBotao(opc-1);
+        selecionaOpc(1);
+        return;
+    }
+    if(opc==9){
+        estilizaBotao(opc-1);
+        selecionaOpc(9);
         return;
     }
     
-    
 }
 
-function selecionaOpc(){
-	
+function selecionaOpc(opc){
 	const options = {
 		
 		method: 'GET',
@@ -93,15 +122,64 @@ function selecionaOpc(){
 			'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
 		}
 	};
-
-	fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${menu}`, options)
+    if(opc==1){
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${menu}`, options)
 		.then(response => response.json())
 		.then(response => console.log(response))
 	    .catch(err => console.error(err));
-
-        
+        return;
+    }
+    if(opc==9){
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity`, options)
+	    .then(response => response.json())
+	    .then(response => console.log(response))
+	    .catch(err => console.error(err));
+        return;
+    }
 }
 
+
+function estilizaBotao(opcBot){
+    let i=0;
+
+    for (i=0; i<8;i++){
+        if (i == opcBot){
+            botao[i].classList.toggle("botao_menu-ativo");
+            botao[i].classList.toggle("botao_menu");
+            divBot[i].classList.toggle("botao_menu-ativo");
+            divBot[i].classList.toggle("botao_menu");
+
+
+        }else{
+            if(botao[i].classList.contains("botao_menu")){
+                continue;
+            }else{
+                botao[i].classList.toggle("botao_menu-ativo");
+                botao[i].classList.toggle("botao_menu");
+                divBot[i].classList.toggle("botao_menu-ativo");
+                divBot[i].classList.toggle("botao_menu");
+            }
+        }
+
+    }
+
+    if (opcBot==8){
+        botHome.classList.toggle("home");
+        botHome.classList.toggle("home-ativo");
+        divHome.classList.toggle("div_home");
+        divHome.classList.toggle("div_home-ativo");
+    }else
+    {
+        if(botHome.classList.contains("home")){
+            return;
+        }else{
+            botHome.classList.toggle("home");
+            botHome.classList.toggle("home-ativo");   
+            divHome.classList.toggle("div_home");
+            divHome.classList.toggle("div_home-ativo");
+        }
+    }
+}
 /*
 fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
     method: "GET",
