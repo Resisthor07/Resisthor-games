@@ -7,57 +7,63 @@ let elementosRafael =
     ];
     
 let plataformaRafael;
-
-
-
-function hoverOnRafael(id)
-{
-    let elemento = document.getElementById(id);
-
-    elemento.style.background = "rgba(245, 245, 245, 0.25)";
-}
-
-function hoverOffRafael(id)
-{
-    let elemento = document.getElementById(id);
-
-    elemento.style.background = "none";
-}
-
+let boolRafael = 0;
+let controladorRafael = -1;
 
 
 function selecionaOpcRafael(opc)
 {
-    if(opc==1)
+    if(controladorRafael == opc)
+    {
+        mudaEstiloRafael(opc);
+        controladorRafael = -1;
+        boolRafael = 0;
+        return;
+    }
+
+    controladorRafael = opc;
+
+    if(opc == 0)
     {
         plataformaRafael = "pc";
-        mudaEstiloRafael(0);
+        mudaEstiloRafael(opc);
+
+        /*if(boolRafael == 1 && boolEduardo == 1) 
+        {
+            
+            return;
+        }*/
+
         buscaAPIRafael();
+        boolRafael = 1;
         return;
     }
-    if(opc==2)
+    if(opc == 1)
     {
         plataformaRafael = "browser";
-        mudaEstiloRafael(1);
+        mudaEstiloRafael(opc);
         buscaAPIRafael();
+        boolRafael = 1;
         return;
     }
-    if(opc==3)
+    if(opc == 2)
     {
         plataformaRafael = "all";
-        mudaEstiloRafael(2);
+        mudaEstiloRafael(opc);
         buscaAPIRafael();
+        boolRafael = 1;
         return;
     }
-    if(opc==4)
+    if(opc == 3)
     {
-        mudaEstiloRafael(3);
+        mudaEstiloRafael(opc);
+        boolRafael = 0;
+        return;
     }
 }
 
 function mudaEstiloRafael(id)
 {
-    let itens = ["pc","browser","all", "favoritos"];
     let e;
     for(e=0 ; e<3; e++)
     {
@@ -118,20 +124,10 @@ function buscaAPIRafael()
 
 }
 
-elementosRafael[0].addEventListener("click", () => selecionaOpcRafael(1));
+elementosRafael[0].addEventListener("click", () => selecionaOpcRafael(0));
 
-elementosRafael[1].addEventListener("click", () => selecionaOpcRafael(2));
+elementosRafael[1].addEventListener("click", () => selecionaOpcRafael(1));
 
-elementosRafael[2].addEventListener("click", () => selecionaOpcRafael(3));
+elementosRafael[2].addEventListener("click", () => selecionaOpcRafael(2));
 
-elementosRafael[3].addEventListener("click", () => selecionaOpcRafael(4));
-
-/* 
-elementosRafael[0].addEventListener("mouseenter", () => hoverOnRafael("pc"));
-elementosRafael[0].addEventListener("mouseleave", () => hoverOffRafael("pc"));
-
-elementosRafael[1].addEventListener("mouseenter", () => hoverOnRafael("browser"));
-elementosRafael[1].addEventListener("mouseleave", () => hoverOffRafael("browser"));
-
-elementosRafael[2].addEventListener("mouseenter", () => hoverOnRafael("all"));
-elementosRafael[2].addEventListener("mouseleave", () => hoverOffRafael("all")); */
+elementosRafael[3].addEventListener("click", () => selecionaOpcRafael(3));
