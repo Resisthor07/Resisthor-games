@@ -1,10 +1,8 @@
 //fetch("https://www.freetogame.com/api/games");
 
+let decimoItem=0;
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
 
-let varAcao;
-let acao=0;
-let decimoItem=0;
 
 let botao =[
 	document.getElementById("bot_action"),
@@ -99,6 +97,7 @@ function selecionaOpc(){
 		.catch(err => console.error(err));
 
 }
+
 /*
 fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
     method: "GET",
