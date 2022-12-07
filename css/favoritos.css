@@ -1,3 +1,10 @@
+.ThiagoImgFavoritos{
+    width: 20vw;
+    max-width: 350px;
+    flex-direction: row;
+}
+
+
 .ThiagoPopupFavorites{
     display: none;
     font-family: 'Poppins', sans-serif;

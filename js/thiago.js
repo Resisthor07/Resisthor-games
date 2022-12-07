@@ -8,7 +8,6 @@ const closeFavorites = document.getElementById("close_favorites");
 const pai = document.getElementById("ListaFavoritos");
 
 window.onload = function(){
-
     if (localStorage.getItem("lista_jogos") != null){
         preferidos = JSON.parse(localStorage.getItem("lista_jogos") || "[]");
         console.log(preferidos);
@@ -18,7 +17,7 @@ window.onload = function(){
 }
 function push_id(id){
    if(preferidos.includes(id) === true ){
-        alert("já adicionado");
+        alert("Este jogo já está adicionado a sua lista de preferidos");
         
     }else {
         preferidos.push(id);
@@ -39,8 +38,6 @@ function print_favorites() {
     removeChild();
     for (index in preferidos) {
     const filho = document.createElement("div");
-        
-
 
         const dadosRece = fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${preferidos[index]}`, {
             method: "GET",
