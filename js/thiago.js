@@ -7,14 +7,24 @@ const showFavorites = document.getElementById("favoritos");
 const closeFavorites = document.getElementById("close_favorites");
 const pai = document.getElementById("ListaFavoritos");
 
+window.onload = function(){
 
+    if (localStorage.getItem("lista_jogos") != null){
+        preferidos = JSON.parse(localStorage.getItem("lista_jogos") || "[]");
+        console.log(preferidos);
+        print_favorites();
+    }
+
+}
 function push_id(id){
    if(preferidos.includes(id) === true ){
-        alert("já adicionado")
+        alert("já adicionado");
+        
     }else {
         preferidos.push(id);
         alert("Jogo adicionado a lista dos favoritos!!");
         print_favorites();
+       localStorage.setItem("lista_jogos", JSON.stringify(preferidos));
    }
 }
 
@@ -58,7 +68,9 @@ function print_favorites() {
         </div>
         `              
               pai.appendChild(filho);
+               
                 });
+            
         }).catch((err) => {
             console.log("Erro!");
         });
@@ -66,8 +78,6 @@ function print_favorites() {
         
     }
 }
-
-
 
 function   openPopupFavorites(){
     button_add_favorites.style.display = 'flex';
