@@ -50,8 +50,13 @@ function selecionaFiltro(opc)
 
     if(opc==1)
     {
+        boolEduardo = 1;
         menu = "action";
         estilizaBotao(opc-1);
+        if(boolEduardo == 1 && boolRafael == 1){
+            //chama a funç~~ao da busca cruzada
+            return;
+        }
         selecionaOpc(1);
         return;
     }
@@ -105,6 +110,7 @@ function selecionaFiltro(opc)
         return;
     }
     if(opc==9){
+        boolEduardo = 0;
         estilizaBotao(opc-1);
         selecionaOpc(9);
         return;
@@ -113,6 +119,7 @@ function selecionaFiltro(opc)
 }
 
 function selecionaOpc(opc){
+
 	const options = {
 		
 		method: 'GET',
