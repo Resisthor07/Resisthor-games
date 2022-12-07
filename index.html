@@ -5,15 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/favoritos.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/samir.css">
     <link rel="stylesheet" href="css/rafael.css">
     <link rel="stylesheet" href="css/eduardo.css">
-    <link rel="stylesheet" href="css/tailyne.css">
     <title>Resisthor Games</title>
 </head>
 
 <body>
+<section class="ThiagoPopupFavorites" id="PopupFavoritos">
+    <article class="organize_header">
+        <h2 class="ThiagoTitleFavoritos">Favoritos</h2>
+        <input class="close_favorites" type="button" name="close_favorites" id="close_favorites" value="X"></input>
+    </article>
+    <div class="ListaFavoritos" id="ListaFavoritos">
+
+
+    </div>
+</section>
+<div class="close_favorites_div" id="closeFavoritesDiv"></div>
     <header class="Rafael">
 
         <figure id="area_1">
@@ -35,48 +46,48 @@
     <main>
         <section class="eduardo">
 
-            <div class="home">
+            <div id= "area_home" class="div_home">
                 <img id="img" src="img/Menu lateral/Home.png" alt="imagem_home">
-                <input type="button" id="bot_home" value="Home">
+                <input type="button" id="bot_home" class="home" value="Home">
 
             </div>
 
-            <div id="action">
+            <div id="action" class="botao_menu">
                 <img id="img" src="img/Menu lateral/Açao.png" alt="Action">
                 <input type="button" class="botao_menu" id="bot_action" value="Action">
             </div>
 
-            <div id="battle">
+            <div id="battle" class="botao_menu">
                 <img id="img" src="img/Menu lateral/ataque.png" alt="Battle_Royale">
                 <input type="button" class="botao_menu" id="bot_battle" value="Battle Royale">
             </div>
 
-            <div id="fight">
+            <div id="fight" class="botao_menu">
                 <img id="img" src="img/Menu lateral/batalha.png" alt="Fight">
                 <input type="button" class="botao_menu" id="bot_figtht" value="Fight">
             </div>
 
-            <div id="racing">
+            <div id="racing" class="botao_menu">
                 <img id="img" src="img/Menu lateral/F1 Car.png" alt="Racing">
                 <input type="button"class="botao_menu"  id="bot_racing" value="Racing">
             </div>
 
-            <div id="sci">
+            <div id="sci" class="botao_menu">
                 <img id="img" src="img/Menu lateral/nave.png" alt="Sci-FI">
                 <input type="button" class="botao_menu" id="bot_sci" value="Sci-FI">
             </div>
 
-            <div id="shooting">
+            <div id="shooting" class="botao_menu">
                 <img id="img" src="img/Menu lateral/Sniper.png" alt="Shooting">
                 <input type="button" class="botao_menu" id="bot_shooting" value="Shooting">
             </div>
 
-            <div id="sports">
+            <div id="sports" class="botao_menu">
                 <img id="img" src="img/Menu lateral/Sports.png" alt="Sports">
                 <input type="button" class="botao_menu" id="bot_sports" value="Sports">
             </div>
 
-            <div id="strategy">
+            <div id="strategy" class="botao_menu">
                 <img id="img" src="img/Menu lateral/estrategia.png" alt="Strategy">
                 <input type="button" class="botao_menu" id="bot_strategy" value="Strategy">
             </div>
@@ -89,7 +100,9 @@
                 </figure>
             </section>
             <button type="button" nome="carregar-mais" id="carregar-mais">Carregar mais</button>
+
         </section>
+
 
     </main>
     <footer>
@@ -103,7 +116,6 @@
     <script type="text/javascript" src="js/eduardo.js"></script>
     <script type="text/javascript" src="js/thiago.js"></script>
     <script type="text/javascript" src="js/tailyne.js"></script>
-    
 </body>
 
 </html>
