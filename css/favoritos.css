@@ -1,0 +1,79 @@
+.ThiagoImgFavoritos{
+    width: 20vw;
+    max-width: 350px;
+    flex-direction: row;
+}
+
+
+.ThiagoPopupFavorites{
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    flex-direction: column;
+    background-color: rgb(31, 85, 124);
+    align-items: center;
+    padding-top: 10px;
+    width: 25vw;
+    max-width: 400px;
+    position: absolute;
+    top: 110px;
+    right: 50px;
+    z-index: 20;
+}
+.organize_header{
+    display: flex;
+    flex-direction: row;
+   gap: 60px;
+}
+.close_favorites{
+    border: none;
+    background-color: #1f557c;
+    color: red;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+.thiagolink_favorites{
+    text-decoration: none;
+}
+.ThiagoTitleFavoritos{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2vw;
+}
+.thiagoname_favorite{
+   text-align: center;
+    margin: 0.2vw;
+    font-size: 1vw;
+    color: white;
+    font-weight: normal;
+}
+.ListaFavoritos{
+    flex-direction: row;
+}
+.thiagoOrganizafavoritos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+.ThiagoImgFavoritos{
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+}
+.close_favorites_div{
+    cursor: pointer;
+    display: none;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+body{
+    position: relative;
+}
