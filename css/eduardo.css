@@ -10,6 +10,7 @@
     background-color: #214A68;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .eduardo #action,
@@ -23,7 +24,7 @@
     width: 25vw;
 }
 
-.eduardo .home {
+.eduardo .div_home {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,7 +33,28 @@
     height: 50px;
 }
 
-.eduardo #bot_home {
+.eduardo .div_home {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25vw;
+    background: #032c4aad;
+    height: 50px;
+}
+
+.eduardo .div_home-ativo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25vw;
+    background: #cbc2c2;
+    height: 50px;
+}
+
+.eduardo .home {
+    cursor: pointer;
     background-color: #032c4aad;
     display: flex;
     justify-content: flex-start;
@@ -46,20 +68,22 @@
     font-size: 1.5vw;
 }
 
-.eduardo #bot_home:focus {
+.eduardo .home-ativo {
     cursor: pointer;
     background: #cbc2c2;
-    background-position: 0px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0;
+    padding: 0%;
+    color: white;
+    width: 20vw;
+    height: 50px;
+    font-family: 'Inter';
+    font-size: 1.5vw;
 }
 
-.eduardo #bot_action,
-#bot_battle,
-#bot_figtht,
-#bot_racing,
-#bot_sci,
-#bot_shooting,
-#bot_sports,
-#bot_strategy {
+.eduardo .botao_menu{
     background-color: #214A68;
     display: flex;
     justify-content: flex-start;
@@ -72,18 +96,26 @@
     font-size: 2vw;
 }
 
-.eduardo #bot_action:focus,
-#bot_battle:focus,
-#bot_figtht:focus,
-#bot_racing:focus,
-#bot_sci:focus,
-#bot_shooting:focus,
-#bot_sports:focus,
-#bot_strategy:focus {
+.eduardo .botao_menu:hover{
     cursor: pointer;
     background: #cbc2c2;
     background-position: 0px 10px;
+    
 }
+
+.eduardo .botao_menu-ativo {
+    background: #cbc2c2;
+    display: flex;
+    justify-content: flex-start;
+    border: 0;
+    padding: 0%;
+    color: white;
+    width: 25vw;
+    height: 50px;
+    font-family: 'Inter';
+    font-size: 2vw;
+}
+
 
 .eduardo div {
     width: 25vw;

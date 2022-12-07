@@ -22,7 +22,33 @@ body {
     align-items: center;
 }
 
-.Rafael input {
+.Rafael .botao-ativo
+{
+    transition: all .25s;
+
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px; 
+
+    width: 125px;
+    height: 48px;
+    
+    background: rgba(245, 245, 245, 0.25);
+
+    border-radius: 3px;
+    border: solid 4px rgb(68, 68, 68);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.Rafael .botao-padrao 
+{
+    transition: all .75s;
+
     color: #ffffff;
     font-family: 'Poppins';
     font-style: normal;
@@ -36,25 +62,14 @@ body {
     border-radius: 3px;
     background: none;
 
-    transition: all 1s;
 
     cursor: pointer;
 }
 
-.Rafael input:hover {
-
+.Rafael .botao-padrao:hover
+{
     background: rgba(245, 245, 245, 0.25);
     transition: all .25s;
-
-}
-
-.Rafael input:focus {
-    background: rgba(245, 245, 245, 0.25);
-
-    border: solid 4px rgb(68, 68, 68);
-    border-top: none;
-    border-right: none;
-    border-left: none;
 }
 
 .Rafael #area_1 {
@@ -82,14 +97,69 @@ body {
     height: 48px;
 }
 
-.Rafael #favoritos {
-    background-position: 0px 12px;
+.Rafael .botao-favorito-padrao
+{
+    transition: all .75s;
+
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+
+    width: 125px;
+    height: 48px;
+    border: hidden;
+    border-radius: 3px;
+    background: none;
+
+    background-position: 3px 12px;
     background-image: url(../img/header/star_header.png);
     background-repeat: no-repeat;
     text-align: end;
-    transition: all .25s;
 }
 
-.Rafael #favoritos:focus {
-    background-position: 0px 10px;
+.Rafael .botao-favorito-padrao:hover
+{
+    background: rgba(245, 245, 245, 0.25);
+    background-image: url(../img/header/star_header.png);
+    background-position: 3px 12px;
+    background-repeat: no-repeat;
+}
+
+.Rafael .botao-favorito-ativo
+{
+    transition: all .25s;
+
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px; 
+
+    width: 125px;
+    height: 48px;
+    
+    background: rgba(245, 245, 245, 0.25);
+
+    border-radius: 3px;
+    border: solid 4px rgb(68, 68, 68);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+    
+    background-image: url(../img/header/star_header.png);
+    background-position: 3px 10px;
+    background-repeat: no-repeat;
+    text-align: end;
+}
+
+.Rafael .botao-favorito-ativo:hover
+{
+    background-image: url(../img/header/star_header.png);
+    background-position: 3px 10px;
+    background-repeat: no-repeat;
 }
