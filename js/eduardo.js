@@ -1,11 +1,5 @@
 //fetch("https://www.freetogame.com/api/games");
 
-botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
-
-let varAcao;
-let acao=0;
-let decimoItem=0;
-
 let botao =[
 	document.getElementById("bot_action"),
 	document.getElementById("bot_battle"),
