@@ -52,14 +52,8 @@
     background-position: 0px 10px;
 }
 
-.eduardo #bot_action,
-#bot_battle,
-#bot_figtht,
-#bot_racing,
-#bot_sci,
-#bot_shooting,
-#bot_sports,
-#bot_strategy {
+.eduardo #bot_action, #bot_battle, #bot_figtht, 
+#bot_racing, #bot_sci, #bot_shooting, #bot_sports, #bot_strategy{
     background-color: #214A68;
     display: flex;
     justify-content: flex-start;

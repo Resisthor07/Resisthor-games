@@ -46,6 +46,10 @@
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
+.samir .lista-jogos {
+    width: 65vw;
+}
+
 .samir .lista-jogos ul {
     display: flex;
     padding: 0;
@@ -53,6 +57,10 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
+}
+
+.samir .lista-jogos ul:last-child {
+    margin-top: 2.4vw;
 }
 
 .samir .lista-jogos ul li {
