@@ -87,9 +87,10 @@ function closePopupFavorite(){
     button_add_favorites.style.display = 'none';
     pagina[0].style.filter = "none";
     closeFavoritesDiv.style.display ="none";
+    mudaEstiloRafael(3);
     console.log("fechar");
 }
 
-showFavorites.addEventListener("click", openPopupFavorites);
+//showFavorites.addEventListener("click", openPopupFavorites);
 closeFavorites.addEventListener("click", closePopupFavorite);
 closeFavoritesDiv.addEventListener("click", closePopupFavorite);
