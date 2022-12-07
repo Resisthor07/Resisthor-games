@@ -54,7 +54,7 @@ function selecionaFiltro(opc)
         menu = "action";
         estilizaBotao(opc-1);
         if(boolEduardo == 1 && boolRafael == 1){
-            //chama a funç~~ao da busca cruzada
+            filtroTailyne();
             return;
         }
         selecionaOpc(1);
@@ -64,6 +64,10 @@ function selecionaFiltro(opc)
     {
         menu = "Battle-Royale";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     }
@@ -71,6 +75,10 @@ function selecionaFiltro(opc)
     {
         menu = "fighting";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     }
@@ -78,6 +86,10 @@ function selecionaFiltro(opc)
     {
         menu = "racing";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     }
@@ -85,6 +97,10 @@ function selecionaFiltro(opc)
     {
         menu = "sci-fi";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     }
@@ -92,6 +108,10 @@ function selecionaFiltro(opc)
     {
         menu = "shooter";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     }
@@ -99,6 +119,10 @@ function selecionaFiltro(opc)
     {
         menu = "sports";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     } 
@@ -106,12 +130,20 @@ function selecionaFiltro(opc)
     {
         menu = "strategy";
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(1);
         return;
     }
     if(opc==9){
         boolEduardo = 0;
         estilizaBotao(opc-1);
+		if(boolEduardo == 1 && boolRafael == 1){
+            filtroTailyne();
+            return;
+        }
         selecionaOpc(9);
         return;
     }
@@ -144,7 +176,6 @@ function selecionaOpc(opc){
         return;
     }
 }
-
 
 function estilizaBotao(opcBot){
     let i=0;

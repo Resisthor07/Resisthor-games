@@ -7,7 +7,7 @@ let elementosRafael =
     ];
     
 let plataformaRafael;
-let boolRafael = 0;
+let boolRafael = 1;
 let controladorRafael = -1;
 
 
