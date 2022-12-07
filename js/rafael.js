@@ -21,18 +21,19 @@ function selecionaOpcRafael(opc)
         return;
     }
 
-    controladorRafael = opc;
+    
 
     if(opc == 0)
     {
+        controladorRafael = opc;
         plataformaRafael = "pc";
         mudaEstiloRafael(opc);
 
-        /*if(boolRafael == 1 && boolEduardo == 1) 
+        if(boolRafael == 1 && boolEduardo == 1) 
         {
-            
+            filtroTailyne();    
             return;
-        }*/
+        }
 
         buscaAPIRafael();
         boolRafael = 1;
@@ -40,23 +41,44 @@ function selecionaOpcRafael(opc)
     }
     if(opc == 1)
     {
+        controladorRafael = opc;
         plataformaRafael = "browser";
         mudaEstiloRafael(opc);
+
+        if(boolRafael == 1 && boolEduardo == 1) 
+        {
+            filtroTailyne();    
+            return;
+        }
+
         buscaAPIRafael();
         boolRafael = 1;
         return;
     }
     if(opc == 2)
     {
+        controladorRafael = opc;
         plataformaRafael = "all";
         mudaEstiloRafael(opc);
+
+        if(boolRafael == 1 && boolEduardo == 1) 
+        {
+            filtroTailyne();    
+            return;
+        }
+
         buscaAPIRafael();
         boolRafael = 1;
         return;
     }
     if(opc == 3)
     {
+        controladorRafael = -1;
+        console.log("entrou");
         mudaEstiloRafael(opc);
+
+        openPopupFavorites();
+
         boolRafael = 0;
         return;
     }
