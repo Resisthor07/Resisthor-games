@@ -64,7 +64,6 @@ function selecionaOpcRafael(opc)
 
 function mudaEstiloRafael(id)
 {
-    let itens = ["pc","browser","all", "favoritos"];
     let e;
     for(e=0 ; e<3; e++)
     {
