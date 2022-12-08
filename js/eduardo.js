@@ -62,6 +62,7 @@ function selecionaFiltro(opc)
     }
     if(opc==2)
     {
+		boolEduardo = 1;
         menu = "Battle-Royale";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
@@ -73,17 +74,20 @@ function selecionaFiltro(opc)
     }
     if(opc==3)
     {
+		boolEduardo = 1;
         menu = "fighting";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
             filtroTailyne();
             return;
         }
+		boolEduardo = 1;
         selecionaOpc(1);
         return;
     }
 	if(opc==4)
     {
+		boolEduardo = 1;
         menu = "racing";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
@@ -95,6 +99,7 @@ function selecionaFiltro(opc)
     }
 	if(opc==5)
     {
+		boolEduardo = 1;
         menu = "sci-fi";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
@@ -106,6 +111,7 @@ function selecionaFiltro(opc)
     }
     if(opc==6)
     {
+		boolEduardo = 1;
         menu = "shooter";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
@@ -117,6 +123,7 @@ function selecionaFiltro(opc)
     }
     if(opc==7)
     {
+		boolEduardo = 1;
         menu = "sports";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
@@ -128,6 +135,7 @@ function selecionaFiltro(opc)
     } 
     if(opc==8)
     {
+		boolEduardo = 1;
         menu = "strategy";
         estilizaBotao(opc-1);
 		if(boolEduardo == 1 && boolRafael == 1){
@@ -138,12 +146,9 @@ function selecionaFiltro(opc)
         return;
     }
     if(opc==9){
+		
         boolEduardo = 0;
         estilizaBotao(opc-1);
-		if(boolEduardo == 1 && boolRafael == 1){
-            filtroTailyne();
-            return;
-        }
         selecionaOpc(9);
         return;
     }
