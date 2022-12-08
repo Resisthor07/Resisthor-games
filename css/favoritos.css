@@ -26,10 +26,12 @@
    gap: 60px;
 }
 .close_favorites{
+    position: absolute;
+    right: 8px;
     border: none;
     background-color: #1f557c;
     color: red;
-    font-size: 2vw;
+    font-size: 1vw;
     font-weight: bold;
     cursor: pointer;
 }
