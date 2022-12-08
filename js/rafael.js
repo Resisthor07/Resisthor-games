@@ -25,6 +25,7 @@ function selecionaOpcRafael(opc)
 
     if(opc == 0)
     {
+        boolRafael = 1;
         controladorRafael = opc;
         plataformaRafael = "pc";
         mudaEstiloRafael(opc);
@@ -36,11 +37,11 @@ function selecionaOpcRafael(opc)
         }
 
         buscaAPIRafael();
-        boolRafael = 1;
         return;
     }
     if(opc == 1)
     {
+        boolRafael = 1;
         controladorRafael = opc;
         plataformaRafael = "browser";
         mudaEstiloRafael(opc);
@@ -52,11 +53,11 @@ function selecionaOpcRafael(opc)
         }
 
         buscaAPIRafael();
-        boolRafael = 1;
         return;
     }
     if(opc == 2)
     {
+        boolRafael = 1;
         controladorRafael = opc;
         plataformaRafael = "all";
         mudaEstiloRafael(opc);
@@ -68,7 +69,6 @@ function selecionaOpcRafael(opc)
         }
 
         buscaAPIRafael();
-        boolRafael = 1;
         return;
     }
     if(opc == 3)
@@ -138,9 +138,10 @@ function buscaAPIRafael()
     };
 
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataformaRafael}`, options)
-        .then((response) => {
-            response.json()
-                .then(lista => console.log(lista));
+        .then((response) => {response.json()
+                .then(lista => {
+                    console.log(lista);
+                    carregarMais(lista)});
         })
         .catch((err) => console.log(err));
 

@@ -6,7 +6,7 @@
 }
 
 .eduardo {
-    width: 25vw;
+    width: 20vw;
     background-color: #214A68;
     display: flex;
     flex-direction: column;
@@ -21,25 +21,17 @@
 #shooting,
 #sports,
 #strategy {
-    width: 25vw;
+    width: 20vw;
 }
 
-.eduardo .div_home {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 25vw;
-    background: #032c4aad;
-    height: 50px;
-}
 
 .eduardo .div_home {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 25vw;
-    background: #032c4aad;
+    width: 20vw;
+    background-color: #214A68;
     height: 50px;
 }
 
@@ -48,14 +40,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 25vw;
+    width: 20vw;
     background: #cbc2c2;
     height: 50px;
 }
 
 .eduardo .home {
     cursor: pointer;
-    background-color: #032c4aad;
+    background-color: #214A68;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -90,10 +82,10 @@
     border: 0;
     padding: 0%;
     color: white;
-    width: 25vw;
+    width: 20vw;
     height: 50px;
     font-family: 'Inter';
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 .eduardo .botao_menu:hover{
@@ -110,15 +102,15 @@
     border: 0;
     padding: 0%;
     color: white;
-    width: 25vw;
+    width: 20vw;
     height: 50px;
     font-family: 'Inter';
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 
 .eduardo div {
-    width: 25vw;
+    width: 20vw;
     list-style: none;
     display: flex;
     flex-direction: row;
