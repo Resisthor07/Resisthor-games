@@ -1,6 +1,5 @@
 
 function filtroTailyne(){
-
     const options = {
     method: 'GET',
     headers: {
@@ -11,9 +10,10 @@ function filtroTailyne(){
         
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataformaRafael}&category=${menu}&sort-by=release-date`, options)
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then(response => carregarMais(response))
+        .catch(err => window.alert(err));
 
 
 }
+
 
