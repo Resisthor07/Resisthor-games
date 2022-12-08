@@ -25,6 +25,7 @@ let botaoRemover = document.getElementById("remover");
 let botaoRemoverTudo = document.getElementById("remover-tudo");
 let primeiroCarregamento = true;
 let controle = 0;
+let filtro = "shooter";
 
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro, true) });
 botaoRemover.addEventListener("click", () => limparTela(false));
