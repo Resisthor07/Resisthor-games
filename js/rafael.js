@@ -138,9 +138,10 @@ function buscaAPIRafael()
     };
 
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataformaRafael}`, options)
-        .then((response) => {
-            response.json()
-                .then(lista => console.log(lista));
+        .then((response) => {response.json()
+                .then(lista => {
+                    console.log(lista);
+                    carregarMais(lista)});
         })
         .catch((err) => console.log(err));
 
