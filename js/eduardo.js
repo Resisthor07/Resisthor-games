@@ -1,9 +1,9 @@
 //fetch("https://www.freetogame.com/api/games");
 
-let decimoItem = 0;
-
+let decimoItem=0;
 let menu;
 let boolEduardo;
+let controlaFiltro=0;
 
 
 let divBot = [
@@ -46,8 +46,22 @@ botao[7].addEventListener("click", () => selecionaFiltro(8));
 
 function selecionaFiltro(opc) {
 
+    if (controlaFiltro == opc){
+        estilizaBotao(opc - 1);
+        controlaFiltro = 0;
+        boolEduardo=0;
+
+        if(boolRafael == 1)
+        {
+            buscaAPIRafael();
+            return;
+        }
+        
+    }
+
 
     if (opc == 1) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "action";
         estilizaBotao(opc - 1);
@@ -59,6 +73,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 2) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "Battle-Royale";
         estilizaBotao(opc - 1);
@@ -70,6 +85,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 3) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "fighting";
         estilizaBotao(opc - 1);
@@ -82,6 +98,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 4) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "racing";
         estilizaBotao(opc - 1);
@@ -93,6 +110,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 5) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "sci-fi";
         estilizaBotao(opc - 1);
@@ -104,6 +122,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 6) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "shooter";
         estilizaBotao(opc - 1);
@@ -115,6 +134,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 7) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "sports";
         estilizaBotao(opc - 1);
@@ -126,6 +146,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 8) {
+        controlaFiltro = opc;
         boolEduardo = 1;
         menu = "strategy";
         estilizaBotao(opc - 1);
@@ -137,7 +158,7 @@ function selecionaFiltro(opc) {
         return;
     }
     if (opc == 9) {
-
+        controlaFiltro = opc;
         boolEduardo = 0;
         estilizaBotao(opc - 1);
         selecionaOpc(9);
@@ -160,14 +181,14 @@ function selecionaOpc(opc) {
     if (opc == 1) {
         fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${menu}`, options)
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => chamarFuncoes(response))
             .catch(err => console.error(err));
         return;
     }
     if (opc == 9) {
         fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity`, options)
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => chamarFuncoes(response))
             .catch(err => console.error(err));
         return;
     }
