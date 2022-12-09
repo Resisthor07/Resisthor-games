@@ -1,8 +1,18 @@
 let jogosCarregados;
 
-function carregarMais(dados, filtro) {
 
-    let stringHtml = `<h3>${filtro} ${menu}</h3>`;
+function carregarMais(dados, filtro) {
+    let plataforma = plataformaRafael, genero = menu, regex = /[a-z]i/;
+
+    if (regex.test(plataforma)) {
+        plataforma = "Jogos";
+    }
+
+    if (regex.test(genero)) {
+        genero = "";
+    }
+
+    let stringHtml = `<h3>${plataforma} <br> ${genero}</h3>`;
     let stringLinhas = "";
 
     containerDeJogos.className = "lista-jogos";
@@ -62,4 +72,10 @@ function limparTela() {
     primeiroCarregamento = true;
     containerDeJogos.innerHTML = "";
 
+}
+
+function chamarFuncoes(dadosDoServidor) {
+    dadosServidor = dadosDoServidor;
+    limparTela();
+    carregarMais(dadosDoServidor);
 }
