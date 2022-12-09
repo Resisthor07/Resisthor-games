@@ -141,7 +141,7 @@ function buscaAPIRafael()
         .then((response) => {response.json()
                 .then(lista => {
                     console.log(lista);
-                    carregarMais(lista)})
+                    carregarMais(lista, undefined, true)})
         })
         .catch((err) => console.log(err));
 
