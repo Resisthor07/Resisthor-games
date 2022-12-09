@@ -12,7 +12,7 @@ function carregarMais(dados, filtro) {
         genero = "";
     }
 
-    let stringHtml = `<h3>${plataforma} <br> ${genero}</h3>`;
+    let stringHtml = "";
     let stringLinhas = "";
 
     containerDeJogos.className = "lista-jogos";
@@ -29,7 +29,7 @@ function carregarMais(dados, filtro) {
             stringLinhas += `
                             <li>
                                 <div class="botao-favoritos"></div>
-                                <a href="${dados[controleSamir].game_url}">
+                                <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
                                 <small>${dados[controleSamir].title}</small>
@@ -49,11 +49,14 @@ function carregarMais(dados, filtro) {
 
             controleSamir++;
             stringLinhas += `
-                                <li>
+                            <li>
+                                <div class="botao-favoritos"></div>
+                                <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
-                                    <small>${dados[controleSamir].title}</small>
-                                </li>
-                                `;
+                                </a>
+                                <small>${dados[controleSamir].title}</small>
+                            </li>
+                            `;
 
         }
         stringTemp += stringLinhas;
