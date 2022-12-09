@@ -1,7 +1,6 @@
 //fetch("https://www.freetogame.com/api/games");
 
 let decimoItem=0;
-botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor, filtro) });
 let menu;
 let boolEduardo;
 
