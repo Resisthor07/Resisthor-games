@@ -28,7 +28,10 @@ function carregarMais(dados, filtro) {
             controleSamir++;
             stringLinhas += `
                             <li>
-                                <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
+                                <div class="botao-favoritos"></div>
+                                <a href="${dados[controleSamir].game_url}">
+                                    <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
+                                </a>
                                 <small>${dados[controleSamir].title}</small>
                             </li>
                             `;
