@@ -1,15 +1,3 @@
-let elementosRafael =   
-    [
-        document.getElementById("pc"),
-        document.getElementById("browser"),
-        document.getElementById("all"),
-        document.getElementById("favoritos")
-    ];
-    
-let plataformaRafael;
-let boolRafael = 0;
-let controladorRafael = -1;
-
 
 function selecionaOpcRafael(opc)
 {
@@ -18,6 +6,12 @@ function selecionaOpcRafael(opc)
         mudaEstiloRafael(opc);
         controladorRafael = -1;
         boolRafael = 0;
+        if(boolEduardo == 1)
+        {
+            selecionaOpc(1);
+            return;
+        }
+
         return;
     }
 
@@ -140,17 +134,8 @@ function buscaAPIRafael()
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataformaRafael}`, options)
         .then((response) => {response.json()
                 .then(lista => {
-                    console.log(lista);
-                    carregarMais(lista, undefined, true)})
+                    chamarFuncoes(lista)})
         })
         .catch((err) => console.log(err));
 
 }
-
-elementosRafael[0].addEventListener("click", () => selecionaOpcRafael(0));
-
-elementosRafael[1].addEventListener("click", () => selecionaOpcRafael(1));
-
-elementosRafael[2].addEventListener("click", () => selecionaOpcRafael(2));
-
-elementosRafael[3].addEventListener("click", () => selecionaOpcRafael(3));
