@@ -37,8 +37,10 @@ function popUpFiltroNaoAplicavel() {
 function fechaPopup() {
     recebe_section.style.display = "none";
     pagina[0].style.filter = "none";
-    boolRafael == 0;
-    boolEduardo == 0;
+    boolRafael = 0;
+    boolEduardo = 0;
+    menu = 0;
+    plataformaRafael = 0;
     mudaEstiloRafael(4);
     estilizaBotao(9);
 }
