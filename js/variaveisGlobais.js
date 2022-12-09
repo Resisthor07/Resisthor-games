@@ -31,3 +31,27 @@ botaoRemover.addEventListener("click", () => limparTela());
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor) });
 
 /*Fim variaveis globais Samir*/
+
+/*Variaveis globais Rafael*/
+
+let elementosRafael =   
+    [
+        document.getElementById("pc"),
+        document.getElementById("browser"),
+        document.getElementById("all"),
+        document.getElementById("favoritos")
+    ];
+    
+let plataformaRafael;
+let boolRafael = 0;
+let controladorRafael = -1;
+
+elementosRafael[0].addEventListener("click", () => selecionaOpcRafael(0));
+
+elementosRafael[1].addEventListener("click", () => selecionaOpcRafael(1));
+
+elementosRafael[2].addEventListener("click", () => selecionaOpcRafael(2));
+
+elementosRafael[3].addEventListener("click", () => selecionaOpcRafael(3));
+
+/*Fim variaveis globais Rafael*/
