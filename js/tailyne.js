@@ -1,6 +1,8 @@
+let recebe_section = document.getElementById("exibe_filtro");
+let botaoTailyne = document.getElementById("botaoFechar");
+botaoTailyne.addEventListener("click", fechaPopup);
 
 function filtroTailyne(){
-
     const options = {
     method: 'GET',
     headers: {
@@ -11,9 +13,35 @@ function filtroTailyne(){
         
     fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plataformaRafael}&category=${menu}&sort-by=release-date`, options)
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then(response => {
+            if (response.length == undefined) {
+                // window.alert("Filtro não aplicavel!");
+                popUpFiltroNaoAplicavel();
+                return;
+            } else {
+                // carregarMais();
+                console.log(response);
+            }
+        }
+        )
+        .catch(err => window.alert(err));
 
 
+}
+
+function popUpFiltroNaoAplicavel() {
+    recebe_section.style.display = "flex";
+    pagina[0].style.filter = "blur(10px)";
+}
+
+function fechaPopup() {
+    recebe_section.style.display = "none";
+    pagina[0].style.filter = "none";
+    boolRafael = 0;
+    boolEduardo = 0;
+    menu = 0;
+    plataformaRafael = 0;
+    mudaEstiloRafael(4);
+    estilizaBotao(9);
 }
 

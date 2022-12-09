@@ -3,3 +3,23 @@
     height: 100px;
     background-color: #082032;
 }
+
+#botaoFechar{
+    border: 0px;
+    background-color: transparent;
+    color: black;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.filtro{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    display: none;
+    margin-top: 130px;
+    margin-left: 350px;
+    position: absolute;
+    z-index: 30;
+}
