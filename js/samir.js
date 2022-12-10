@@ -28,7 +28,7 @@ function carregarMais(dados, filtro) {
             controleSamir++;
             stringLinhas += `
                             <li>
-                                <div class="botao-favoritos"></div>
+                                <div class="botao-favoritos" id="${controleSamir}"></div>
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -50,7 +50,7 @@ function carregarMais(dados, filtro) {
             controleSamir++;
             stringLinhas += `
                             <li>
-                                <div class="botao-favoritos"></div>
+                                <div class="botao-favoritos" id="favoritar${controleSamir}"></div>
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -70,6 +70,7 @@ function carregarMais(dados, filtro) {
         jogosCarregados = document.getElementById("jogos-carregados");
         primeiroCarregamento = false;
     }
+    criaBotoesFavoritar();
 }
 
 function limparTela() {
@@ -84,4 +85,35 @@ function chamarFuncoes(dadosDoServidor) {
     dadosServidor = dadosDoServidor;
     limparTela();
     carregarMais(dadosDoServidor);
+}
+
+let botoesFavoritar = [];
+let botoesFavoritarNum = [];
+let adicionadoFavoritos = [];
+
+function criaBotoesFavoritar() {
+
+    for (i in dadosServidor) {
+
+        botoesFavoritar[i] = document.getElementsByClassName("botao-favoritos")[i];
+        botoesFavoritarNum[i] = i;
+
+        if (i < 9) {
+            console.log(i);
+            botoesFavoritar[i].addEventListener("click", () => {
+
+                if (adicionadoFavoritos[0]) {
+                    botoesFavoritar[0].style.backgroundColor = "unset";
+                    adicionadoFavoritos[0] = false;
+                } else {
+                    botoesFavoritar[0].style.backgroundColor = "white";
+                    adicionadoFavoritos[0] = true;
+                }
+            });
+        }
+    }
+}
+
+function eventoFavoritar() {
+    alert("oii")
 }
