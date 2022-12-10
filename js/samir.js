@@ -20,12 +20,13 @@ function carregarMais(dados, filtro) {
     if (primeiroCarregamento) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
-        imagemBanner.innerHTML = `<img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}"/>`;
+        imagemBanner.innerHTML = `<div class="botao-favoritos" id="${controleSamir}"></div>
+                                  <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}"/>`;
         controleSamir++;
 
         for (i = 0; i < 9 && controleSamir < dados.length; i++) {
 
-            controleSamir++;
+
             stringLinhas += `
                             <li>
                                 <div class="botao-favoritos" id="${controleSamir}"></div>
@@ -35,6 +36,8 @@ function carregarMais(dados, filtro) {
                                 <small>${dados[controleSamir].title}</small>
                             </li>
                             `;
+
+            controleSamir++;
         }
 
 
@@ -47,7 +50,7 @@ function carregarMais(dados, filtro) {
 
         for (i = 0; i < 10; i++) {
 
-            controleSamir++;
+
             stringLinhas += `
                             <li>
                                 <div class="botao-favoritos" id="favoritar${controleSamir}"></div>
@@ -57,11 +60,13 @@ function carregarMais(dados, filtro) {
                                 <small>${dados[controleSamir].title}</small>
                             </li>
                             `;
+            controleSamir++;
 
         }
         stringTemp += stringLinhas;
 
         jogosCarregados.innerHTML = stringTemp;
+        criaBotoesFavoritar();
     }
 
     if (primeiroCarregamento) {
@@ -69,8 +74,9 @@ function carregarMais(dados, filtro) {
         containerDeJogos.innerHTML = stringHtml;
         jogosCarregados = document.getElementById("jogos-carregados");
         primeiroCarregamento = false;
+        criaBotoesFavoritar();
     }
-    criaBotoesFavoritar();
+
 }
 
 function limparTela() {
@@ -88,32 +94,36 @@ function chamarFuncoes(dadosDoServidor) {
 }
 
 let botoesFavoritar = [];
-let botoesFavoritarNum = [];
 let adicionadoFavoritos = [];
+let controleFav = 0;
 
 function criaBotoesFavoritar() {
 
-    for (i in dadosServidor) {
+    for (; controleFav < controleSamir; controleFav++) {
 
-        botoesFavoritar[i] = document.getElementsByClassName("botao-favoritos")[i];
-        botoesFavoritarNum[i] = i;
+        botoesFavoritar[controleFav] = document.getElementsByClassName("botao-favoritos")[controleFav];
 
-        if (i < 9) {
-            console.log(i);
-            botoesFavoritar[i].addEventListener("click", () => {
+        console.log("Conteudo do vetor favoritar: " + botoesFavoritar + "\nTamanho do vetor: " + botoesFavoritar.length);
+        console.log(controleFav);
 
-                if (adicionadoFavoritos[0]) {
-                    botoesFavoritar[0].style.backgroundColor = "unset";
-                    adicionadoFavoritos[0] = false;
-                } else {
-                    botoesFavoritar[0].style.backgroundColor = "white";
-                    adicionadoFavoritos[0] = true;
-                }
-            });
-        }
+        let controle = controleFav;
+        botoesFavoritar[controleFav].addEventListener("click", () => {
+            eventoFavoritar(controle);
+        })
     }
 }
 
-function eventoFavoritar() {
-    alert("oii")
+function eventoFavoritar(controle) {
+
+    if (adicionadoFavoritos[controle]) {
+        botoesFavoritar[controle].style.backgroundColor = "unset";
+        adicionadoFavoritos[controle] = false;
+    } else {
+        botoesFavoritar[controle].style.backgroundColor = "white";
+        adicionadoFavoritos[controle] = true;
+    }
+}
+
+function verificaAdicaoNosFavoritos() {
+
 }
