@@ -1,16 +1,7 @@
 let jogosCarregados;
 
 
-function carregarMais(dados, filtro) {
-    let plataforma = plataformaRafael, genero = menu, regex = /[a-z]i/;
-
-    if (regex.test(plataforma)) {
-        plataforma = "Jogos";
-    }
-
-    if (regex.test(genero)) {
-        genero = "";
-    }
+function carregarMais(dados) {
 
     let stringHtml = "";
     let stringLinhas = "";
@@ -20,15 +11,16 @@ function carregarMais(dados, filtro) {
     if (primeiroCarregamento) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
-        imagemBanner.innerHTML = `<div class="botao-favoritos" id="${controleSamir}"></div>
-                                  <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}"/>`;
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela.svg" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">
+                                  <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>`;
+
         controleSamir++;
 
         for (i = 0; i < 9 && controleSamir < dados.length; i++) {
 
             stringLinhas += `
                             <li class="jogo-da-lista">
-                                <div class="botao-favoritos" id="${controleSamir}"></div>
+                                <img src="img/quadro_de_itens/estrela.svg" class="botao-favoritos" id="fav-${controleSamir}">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -65,7 +57,9 @@ function carregarMais(dados, filtro) {
         jogosCarregados = document.getElementById("jogos-carregados");
         primeiroCarregamento = false;
     }
+
     criaBotoesFavoritar();
+    verificaListaDeFavoritos();
 }
 
 
@@ -98,12 +92,12 @@ function criaBotoesFavoritar() {
 
     for (; controleFav < controleSamir; controleFav++) {
 
+        let controle = controleFav;
         botoesFavoritar[controleFav] = document.getElementsByClassName("botao-favoritos")[controleFav];
 
         // console.log("Conteudo do vetor favoritar: " + botoesFavoritar + "\nTamanho do vetor: " + botoesFavoritar.length);
         // console.log("\nControleFav" + controleFav);
 
-        let controle = controleFav;
         botoesFavoritar[controleFav].addEventListener("click", () => {
             eventoFavoritar(controle);
         });
@@ -136,7 +130,7 @@ function adicionaAosFavoritos(controle) {
         for (i in listaDeJogosFavoritos) {
 
             if (dadosServidor[controle].id == listaDeJogosFavoritos[i].id) {
-                console.log("Jogo já existe na lista de favoritos");
+                // console.log("Jogo já existe na lista de favoritos");
                 return;
             }
         }
@@ -161,4 +155,22 @@ function retiraDosFavoritos(controle) {
 
 function verificaListaDeFavoritos() {
 
+    for (i = 0; i < controleFav; i++) {
+
+        for (j in listaDeJogosFavoritos) {
+
+            if (listaDeJogosFavoritos[j].id == dadosServidor[i].id) {
+                // console.log("Marcando novamente");
+                botoesFavoritar[i].style.backgroundColor = "white";
+            }
+        }
+    }
 }
+
+// function transformaSvg(imagem) {
+//     fetch(imagem.src)
+//         .then((response) => response.text())
+//         .then((response) => {
+
+//         })
+// }

@@ -22,8 +22,8 @@
     margin: 3.8vw auto;
 }
 
-.samir figure img {
-    width: 62vw;
+.samir figure #banner {
+    width: inherit;
     height: 24vw;
     border-radius: 2vw;
 }
@@ -47,13 +47,17 @@
 }
 
 .samir .botao-favoritos {
-    width: 10px;
-    height: 10px;
-    border: solid white 2px;
+    width: 2vw;
+    /* border: solid black 2px; */
     position: relative;
     top: 20%;
     left: 85%;
     z-index: 3;
+}
+
+.samir figure .botao-favoritos {
+    top: -85%;
+    left: 92%;
 }
 
 .samir .lista-jogos {
@@ -86,7 +90,7 @@
     font-weight: 700;
 }
 
-.samir .lista-jogos ul li img {
+.samir .lista-jogos ul li a img {
     width: 20vw;
     min-width: 100px;
     margin: 1vw 0;
