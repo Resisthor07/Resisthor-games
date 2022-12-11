@@ -32,7 +32,7 @@ body {
     font-size: 18px;
     line-height: 27px;
 
-    width: 125px;
+    width: 9vw;
     height: 48px;
 
     background: rgba(245, 245, 245, 0.25);
@@ -51,10 +51,10 @@ body {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.5vw;
     line-height: 27px;
 
-    width: 125px;
+    width: 9vw;
     height: 48px;
     border: hidden;
     border-radius: 3px;
@@ -70,7 +70,7 @@ body {
 }
 
 .Rafael #area_1 {
-    margin-right: 130px;
+    margin-right: 9vw;
     gap: 15px;
     color: #ffffff;
     font-family: 'Inter';
@@ -81,12 +81,12 @@ body {
 }
 
 .Rafael #area_2 {
-    margin-right: 100px;
-    gap: 68px;
+    margin-right: 7vw;
+    gap: 5vw;
 }
 
 .Rafael #area_3 {
-    margin-right: 70px;
+    margin-right: 5vw;
 }
 
 .Rafael #logo {
