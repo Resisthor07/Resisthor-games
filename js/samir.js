@@ -11,7 +11,7 @@ function carregarMais(dados) {
     if (primeiroCarregamento) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
-        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela.svg" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">
                                   <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>`;
 
         controleSamir++;
@@ -20,7 +20,7 @@ function carregarMais(dados) {
 
             stringLinhas += `
                             <li class="jogo-da-lista">
-                                <img src="img/quadro_de_itens/estrela.svg" class="botao-favoritos" id="fav-${controleSamir}">
+                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -39,7 +39,7 @@ function carregarMais(dados) {
 
             jogosCarregados.insertAdjacentHTML("beforeend", `
                             <li class="jogo-da-lista">
-                                <div class="botao-favoritos" id="favoritar${controleSamir}"></div>
+                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -111,13 +111,15 @@ function eventoFavoritar(controle) {
     if (adicionadoFavoritosPreenchimento[controle]) {
 
         retiraDosFavoritos(controle);
-        botoesFavoritar[controle].style.backgroundColor = "unset";
+        botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_vazada.png");
+        // botoesFavoritar[controle].style.backgroundColor = "unset";
         adicionadoFavoritosPreenchimento[controle] = false;
 
     } else {
 
         adicionaAosFavoritos(controle);
-        botoesFavoritar[controle].style.backgroundColor = "white";
+        botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_preenchida.png");
+        //botoesFavoritar[controle].style.backgroundColor = "yellow";
         adicionadoFavoritosPreenchimento[controle] = true;
 
     }
@@ -161,7 +163,7 @@ function verificaListaDeFavoritos() {
 
             if (listaDeJogosFavoritos[j].id == dadosServidor[i].id) {
                 // console.log("Marcando novamente");
-                botoesFavoritar[i].style.backgroundColor = "white";
+                botoesFavoritar[i].setAttribute("src", "img/quadro_de_itens/estrela_preenchida.png");
             }
         }
     }
