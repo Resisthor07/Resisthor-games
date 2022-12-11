@@ -7,11 +7,10 @@
 }
 
 .samir #principal {
-    width: 74.9vw;
+    width: 82vw;
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 
 .samir button {

@@ -19,11 +19,10 @@ function filtroTailyne(){
                 popUpFiltroNaoAplicavel();
                 return;
             } else {
-                // carregarMais();
+                chamarFuncoes(response);
                 console.log(response);
             }
-        }
-        )
+        })
         .catch(err => window.alert(err));
 
 
@@ -41,6 +40,7 @@ function fechaPopup() {
     boolEduardo = 0;
     menu = 0;
     plataformaRafael = 0;
+    selecionaFiltro(9);
     mudaEstiloRafael(4);
     estilizaBotao(9);
 }
