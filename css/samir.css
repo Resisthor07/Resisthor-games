@@ -26,6 +26,7 @@
     width: inherit;
     height: 24vw;
     border-radius: 2vw;
+    transition: all 0.3s;
 }
 
 .samir h3 {
@@ -72,10 +73,6 @@
     margin: 0;
 }
 
-.samir .lista-jogos ul:last-child {
-    margin-top: 2.4vw;
-}
-
 .samir .lista-jogos ul li {
     list-style: none;
     display: flex;
@@ -102,7 +99,9 @@
 
 
 .samir .lista-jogos a:hover,
-.samir .botao-favoritos:hover~a {
+.samir .botao-favoritos:hover~a,
+.samir figure #banner:hover,
+.samir figure .botao-favoritos:hover~#banner {
     transform: scale(1.05);
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
     order: 0;

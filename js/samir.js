@@ -18,6 +18,11 @@ function carregarMais(dados) {
 
         for (i = 0; i < 9 && controleSamir < dados.length; i++) {
 
+            if (dados[controleSamir] == undefined) {
+                botaoCarregar.style.display = "none";
+                return;
+            }
+
             stringLinhas += `
                             <li class="jogo-da-lista">
                                 <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
@@ -36,6 +41,11 @@ function carregarMais(dados) {
     if (!primeiroCarregamento) {
 
         for (i = 0; i < 10; i++) {
+
+            if (dados[controleSamir] == undefined) {
+                botaoCarregar.style.display = "none";
+                return;
+            }
 
             jogosCarregados.insertAdjacentHTML("beforeend", `
                             <li class="jogo-da-lista">
@@ -60,6 +70,7 @@ function carregarMais(dados) {
 
     criaBotoesFavoritar();
     verificaListaDeFavoritos();
+    // console.log(dadosServidor);
 }
 
 
@@ -73,6 +84,7 @@ function limparTela() {
     primeiroCarregamento = true;
     containerDeJogos.innerHTML = "";
 
+    botaoCarregar.style.display = "unset";
 }
 
 
@@ -169,10 +181,3 @@ function verificaListaDeFavoritos() {
     }
 }
 
-// function transformaSvg(imagem) {
-//     fetch(imagem.src)
-//         .then((response) => response.text())
-//         .then((response) => {
-
-//         })
-// }
