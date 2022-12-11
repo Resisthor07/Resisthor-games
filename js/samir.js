@@ -43,12 +43,9 @@ function carregarMais(dados, filtro) {
 
     if (!primeiroCarregamento) {
 
-        let stringTemp = jogosCarregados.innerHTML;
-
         for (i = 0; i < 10; i++) {
 
-
-            stringLinhas += `
+            jogosCarregados.insertAdjacentHTML("beforeend", `
                             <li class="jogo-da-lista">
                                 <div class="botao-favoritos" id="favoritar${controleSamir}"></div>
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
@@ -56,14 +53,10 @@ function carregarMais(dados, filtro) {
                                 </a>
                                 <small>${dados[controleSamir].title}</small>
                             </li>
-                            `;
+                            `);
             controleSamir++;
 
         }
-        stringTemp += stringLinhas;
-
-        jogosCarregados.innerHTML = stringTemp;
-        criaBotoesFavoritar();
     }
 
     if (primeiroCarregamento) {
@@ -71,18 +64,23 @@ function carregarMais(dados, filtro) {
         containerDeJogos.innerHTML = stringHtml;
         jogosCarregados = document.getElementById("jogos-carregados");
         primeiroCarregamento = false;
-        criaBotoesFavoritar();
     }
-
+    criaBotoesFavoritar();
 }
+
 
 function limparTela() {
 
     controleSamir = 0;
+
+    controleFav = 0;
+    adicionadoFavoritosPreenchimento = [];
+
     primeiroCarregamento = true;
     containerDeJogos.innerHTML = "";
 
 }
+
 
 function chamarFuncoes(dadosDoServidor) {
     dadosServidor = dadosDoServidor;
@@ -90,19 +88,20 @@ function chamarFuncoes(dadosDoServidor) {
     carregarMais(dadosDoServidor);
 }
 
-let jogosLista = [];
+let listaDeJogosFavoritos = [];
 let botoesFavoritar = [];
 let adicionadoFavoritosPreenchimento = [];
 let controleFav = 0;
 
+
 function criaBotoesFavoritar() {
 
-    for (controleFav = 0; controleFav < controleSamir; controleFav++) {
+    for (; controleFav < controleSamir; controleFav++) {
 
         botoesFavoritar[controleFav] = document.getElementsByClassName("botao-favoritos")[controleFav];
 
-        console.log("Conteudo do vetor favoritar: " + botoesFavoritar + "\nTamanho do vetor: " + botoesFavoritar.length);
-        console.log("\nControleFav" + controleFav);
+        // console.log("Conteudo do vetor favoritar: " + botoesFavoritar + "\nTamanho do vetor: " + botoesFavoritar.length);
+        // console.log("\nControleFav" + controleFav);
 
         let controle = controleFav;
         botoesFavoritar[controleFav].addEventListener("click", () => {
@@ -112,16 +111,54 @@ function criaBotoesFavoritar() {
 }
 
 function eventoFavoritar(controle) {
-    console.log("Conteudo controle: " + controle);
+    // console.log("Adicionado aos favoritos - controle: " + controle);
+    // console.log("\nJá setado:" + adicionadoFavoritosPreenchimento[controle]);
+
     if (adicionadoFavoritosPreenchimento[controle]) {
+
+        retiraDosFavoritos(controle);
         botoesFavoritar[controle].style.backgroundColor = "unset";
         adicionadoFavoritosPreenchimento[controle] = false;
+
     } else {
+
+        adicionaAosFavoritos(controle);
         botoesFavoritar[controle].style.backgroundColor = "white";
         adicionadoFavoritosPreenchimento[controle] = true;
+
     }
 }
 
-function adicionaAosFavoritos() {
+function adicionaAosFavoritos(controle) {
+
+    if (listaDeJogosFavoritos != 0) {
+
+        for (i in listaDeJogosFavoritos) {
+
+            if (dadosServidor[controle].id == listaDeJogosFavoritos[i].id) {
+                console.log("Jogo já existe na lista de favoritos");
+                return;
+            }
+        }
+    }
+
+    listaDeJogosFavoritos.push(dadosServidor[controle]);
+    // console.log(listaDeJogosFavoritos);
+}
+
+function retiraDosFavoritos(controle) {
+
+    let idBuscado = dadosServidor[controle].id;
+
+    for (i in listaDeJogosFavoritos) {
+
+        if (idBuscado == listaDeJogosFavoritos[i].id) {
+            listaDeJogosFavoritos.splice(i, 1);
+            // console.log(listaDeJogosFavoritos);
+        }
+    }
+}
+
+function verificaListaDeFavoritos() {
 
 }
