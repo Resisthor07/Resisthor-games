@@ -31,9 +31,10 @@
     width: 25vw;
     max-width: 400px;
     position: absolute;
-    top: 110px;
+    top: 100px;
     right: 50px;
     z-index: 20;
+    border-radius: 20px;
 }
 .organize_header{
     display: flex;

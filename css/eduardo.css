@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap');
 
 .eduardo #img {
-    width: 3vw;
-    margin: 2vw;
+    width: 2vw;
+    margin: 2.5vw;
+    margin-left: 2vw;
 }
 
 .eduardo {
-    width: 20vw;
+    width: 18vw;
     background-color: #214A68;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .eduardo #action,
@@ -21,7 +22,7 @@
 #shooting,
 #sports,
 #strategy {
-    width: 20vw;
+    width: 18vw;
 }
 
 
@@ -30,9 +31,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20vw;
+    width: 18vw;
     background-color: #214A68;
     height: 50px;
+    margin-top: 3%;
 }
 
 .eduardo .div_home-ativo {
@@ -57,7 +59,7 @@
     width: 20vw;
     height: 50px;
     font-family: 'Inter';
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 .eduardo .home-ativo {
