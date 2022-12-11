@@ -106,6 +106,7 @@ function selecionaFiltro(opc) {
             filtroTailyne();
             return;
         }
+        boolEduardo = 1;
         selecionaOpc(1);
         return;
     }
