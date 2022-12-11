@@ -24,10 +24,9 @@ listaExibida.appendChild(containerDeJogos);
 let dadosServidor = [];
 let botaoCarregar = document.getElementById("carregar-mais");
 let botaoRemover = document.getElementById("remover");
-let botaoRemoverTudo = document.getElementById("remover-tudo");
+
 let primeiroCarregamento = true;
 let controleSamir = 0;
-let filtro = "shooter";
 let botoesFavoritos = [];
 
 botaoRemover.addEventListener("click", () => limparTela());

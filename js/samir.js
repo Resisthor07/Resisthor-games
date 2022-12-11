@@ -26,9 +26,8 @@ function carregarMais(dados, filtro) {
 
         for (i = 0; i < 9 && controleSamir < dados.length; i++) {
 
-
             stringLinhas += `
-                            <li>
+                            <li class="jogo-da-lista">
                                 <div class="botao-favoritos" id="${controleSamir}"></div>
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
@@ -39,8 +38,6 @@ function carregarMais(dados, filtro) {
 
             controleSamir++;
         }
-
-
     }
 
 
@@ -52,7 +49,7 @@ function carregarMais(dados, filtro) {
 
 
             stringLinhas += `
-                            <li>
+                            <li class="jogo-da-lista">
                                 <div class="botao-favoritos" id="favoritar${controleSamir}"></div>
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
@@ -93,37 +90,38 @@ function chamarFuncoes(dadosDoServidor) {
     carregarMais(dadosDoServidor);
 }
 
+let jogosLista = [];
 let botoesFavoritar = [];
-let adicionadoFavoritos = [];
+let adicionadoFavoritosPreenchimento = [];
 let controleFav = 0;
 
 function criaBotoesFavoritar() {
 
-    for (; controleFav < controleSamir; controleFav++) {
+    for (controleFav = 0; controleFav < controleSamir; controleFav++) {
 
         botoesFavoritar[controleFav] = document.getElementsByClassName("botao-favoritos")[controleFav];
 
         console.log("Conteudo do vetor favoritar: " + botoesFavoritar + "\nTamanho do vetor: " + botoesFavoritar.length);
-        console.log(controleFav);
+        console.log("\nControleFav" + controleFav);
 
         let controle = controleFav;
         botoesFavoritar[controleFav].addEventListener("click", () => {
             eventoFavoritar(controle);
-        })
+        });
     }
 }
 
 function eventoFavoritar(controle) {
-
-    if (adicionadoFavoritos[controle]) {
+    console.log("Conteudo controle: " + controle);
+    if (adicionadoFavoritosPreenchimento[controle]) {
         botoesFavoritar[controle].style.backgroundColor = "unset";
-        adicionadoFavoritos[controle] = false;
+        adicionadoFavoritosPreenchimento[controle] = false;
     } else {
         botoesFavoritar[controle].style.backgroundColor = "white";
-        adicionadoFavoritos[controle] = true;
+        adicionadoFavoritosPreenchimento[controle] = true;
     }
 }
 
-function verificaAdicaoNosFavoritos() {
+function adicionaAosFavoritos() {
 
 }
