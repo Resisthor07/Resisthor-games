@@ -10,7 +10,8 @@ function carregarMais(dados) {
     if (primeiroCarregamento) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
-        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos jogo-da-lista" alt="favoritar" id="fav-${controleSamir}">           <a href="${dados[controleSamir].game_url}" target="_blank" id="banner-link">
+        imagemBanner.className = "jogo-da-lista";
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">           <a href="${dados[controleSamir].game_url}" target="_blank" id="banner-link">
                                         <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>
                                     </a>`;
 
@@ -187,12 +188,4 @@ function verificaListaDeFavoritos() {
             }
         }
     }
-}
-
-function mostrarBotaoFavoritar(controle) {
-    botoesFavoritar[controle + 1].style.opacity = "1";
-}
-
-function esconderBotaoFavoritar(controle) {
-
 }
