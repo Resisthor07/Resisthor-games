@@ -1,6 +1,5 @@
 let jogosCarregados;
 
-
 function carregarMais(dados) {
 
     let stringHtml = "";
@@ -16,10 +15,15 @@ function carregarMais(dados) {
 
         controleSamir++;
 
-        for (i = 0; i < 9 && controleSamir < dados.length; i++) {
+        lengthArr = dados.length;
+
+        for (i = 0; i < 9 && controleSamir < lengthArr; i++) {
+
+            if (lengthArr <= 10) {
+                botaoCarregar.style.display = "none";
+            }
 
             if (dados[controleSamir] == undefined) {
-                botaoCarregar.style.display = "none";
                 return;
             }
 
@@ -70,7 +74,6 @@ function carregarMais(dados) {
 
     criaBotoesFavoritar();
     verificaListaDeFavoritos();
-    // console.log(dadosServidor);
 }
 
 
@@ -94,21 +97,12 @@ function chamarFuncoes(dadosDoServidor) {
     carregarMais(dadosDoServidor);
 }
 
-let listaDeJogosFavoritos = [];
-let botoesFavoritar = [];
-let adicionadoFavoritosPreenchimento = [];
-let controleFav = 0;
-
-
 function criaBotoesFavoritar() {
 
     for (; controleFav < controleSamir; controleFav++) {
 
         let controle = controleFav;
         botoesFavoritar[controleFav] = document.getElementsByClassName("botao-favoritos")[controleFav];
-
-        // console.log("Conteudo do vetor favoritar: " + botoesFavoritar + "\nTamanho do vetor: " + botoesFavoritar.length);
-        // console.log("\nControleFav" + controleFav);
 
         botoesFavoritar[controleFav].addEventListener("click", () => {
             eventoFavoritar(controle);
@@ -117,21 +111,17 @@ function criaBotoesFavoritar() {
 }
 
 function eventoFavoritar(controle) {
-    // console.log("Adicionado aos favoritos - controle: " + controle);
-    // console.log("\nJá setado:" + adicionadoFavoritosPreenchimento[controle]);
 
     if (adicionadoFavoritosPreenchimento[controle]) {
 
         retiraDosFavoritos(controle);
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_vazada.png");
-        // botoesFavoritar[controle].style.backgroundColor = "unset";
         adicionadoFavoritosPreenchimento[controle] = false;
 
     } else {
 
         adicionaAosFavoritos(controle);
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_preenchida.png");
-        //botoesFavoritar[controle].style.backgroundColor = "yellow";
         adicionadoFavoritosPreenchimento[controle] = true;
 
     }
@@ -144,14 +134,13 @@ function adicionaAosFavoritos(controle) {
         for (i in listaDeJogosFavoritos) {
 
             if (dadosServidor[controle].id == listaDeJogosFavoritos[i].id) {
-                // console.log("Jogo já existe na lista de favoritos");
                 return;
             }
         }
     }
 
     listaDeJogosFavoritos.push(dadosServidor[controle]);
-    // console.log(listaDeJogosFavoritos);
+
 }
 
 function retiraDosFavoritos(controle) {
@@ -161,8 +150,8 @@ function retiraDosFavoritos(controle) {
     for (i in listaDeJogosFavoritos) {
 
         if (idBuscado == listaDeJogosFavoritos[i].id) {
+
             listaDeJogosFavoritos.splice(i, 1);
-            // console.log(listaDeJogosFavoritos);
         }
     }
 }
@@ -174,10 +163,9 @@ function verificaListaDeFavoritos() {
         for (j in listaDeJogosFavoritos) {
 
             if (listaDeJogosFavoritos[j].id == dadosServidor[i].id) {
-                // console.log("Marcando novamente");
+                adicionadoFavoritosPreenchimento[i] = true;
                 botoesFavoritar[i].setAttribute("src", "img/quadro_de_itens/estrela_preenchida.png");
             }
         }
     }
 }
-

@@ -16,6 +16,11 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
     console.log("Erro!");
 });
 
+let listaDeJogosFavoritos = [];
+let botoesFavoritar = [];
+let adicionadoFavoritosPreenchimento = [];
+let controleFav = 0;
+
 let dadosServidorHome;
 let listaExibida = document.getElementById("principal");
 let containerDeJogos = document.createElement("div");
@@ -23,13 +28,13 @@ listaExibida.appendChild(containerDeJogos);
 
 let dadosServidor = [];
 let botaoCarregar = document.getElementById("carregar-mais");
-let botaoRemover = document.getElementById("remover");
+// let botaoRemover = document.getElementById("remover");
 
 let primeiroCarregamento = true;
 let controleSamir = 0;
 let botoesFavoritos = [];
 
-botaoRemover.addEventListener("click", () => limparTela());
+// botaoRemover.addEventListener("click", () => limparTela());
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor) });
 
 /*Fim variaveis globais Samir*/
