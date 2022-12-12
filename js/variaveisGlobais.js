@@ -23,13 +23,13 @@ listaExibida.appendChild(containerDeJogos);
 
 let dadosServidor = [];
 let botaoCarregar = document.getElementById("carregar-mais");
-let botaoRemover = document.getElementById("remover");
+// let botaoRemover = document.getElementById("remover");
 
 let primeiroCarregamento = true;
 let controleSamir = 0;
 let botoesFavoritos = [];
 
-botaoRemover.addEventListener("click", () => limparTela());
+// botaoRemover.addEventListener("click", () => limparTela());
 botaoCarregar.addEventListener("click", (dados) => { carregarMais(dadosServidor) });
 
 /*Fim variaveis globais Samir*/
