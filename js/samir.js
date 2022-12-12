@@ -10,8 +10,10 @@ function carregarMais(dados) {
     if (primeiroCarregamento) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
-        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">
-                                  <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>`;
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">                        <a href="${dados[controleSamir].game_url}" target="_blank">
+                                        <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>
+                                    </a>`;
+
 
         controleSamir++;
 
