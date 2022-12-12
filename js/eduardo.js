@@ -72,6 +72,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 2) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -84,6 +85,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 3) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -97,6 +99,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 4) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -110,6 +113,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 5) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -122,6 +126,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 6) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -134,6 +139,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 7) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -146,6 +152,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 8) {
         controlaFiltro = opc;
         boolEduardo = 1;
@@ -158,6 +165,7 @@ function selecionaFiltro(opc) {
         selecionaOpc(1);
         return;
     }
+
     if (opc == 9) {
         controlaFiltro = opc;
         boolEduardo = 0;
@@ -179,6 +187,7 @@ function selecionaOpc(opc) {
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
+    
     if (opc == 1) {
         fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${menu}`, options)
             .then(response => response.json())
@@ -186,6 +195,7 @@ function selecionaOpc(opc) {
             .catch(err => console.error(err));
         return;
     }
+
     if (opc == 9) {
         fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity`, options)
             .then(response => response.json())
