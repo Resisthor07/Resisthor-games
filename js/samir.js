@@ -10,7 +10,7 @@ function carregarMais(dados) {
     if (primeiroCarregamento) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
-        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">                        <a href="${dados[controleSamir].game_url}" target="_blank">
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos jogo-da-lista" alt="favoritar" id="fav-${controleSamir}">           <a href="${dados[controleSamir].game_url}" target="_blank" id="banner-link">
                                         <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>
                                     </a>`;
 
@@ -99,16 +99,33 @@ function chamarFuncoes(dadosDoServidor) {
     carregarMais(dadosDoServidor);
 }
 
+const jogosNaTela = [];
+
 function criaBotoesFavoritar() {
 
     for (; controleFav < controleSamir; controleFav++) {
 
         let controle = controleFav;
+
         botoesFavoritar[controleFav] = document.getElementsByClassName("botao-favoritos")[controleFav];
+
+        jogosNaTela[controleFav] = document.getElementsByClassName("jogo-da-lista")[controleFav];
+
 
         botoesFavoritar[controleFav].addEventListener("click", () => {
             eventoFavoritar(controle);
         });
+
+        if (jogosNaTela[controleFav] != undefined) {
+
+            jogosNaTela[controleFav].addEventListener("mouseover", () => {
+                botoesFavoritar[controle].style.opacity = "1";
+            });
+
+            jogosNaTela[controleFav].addEventListener("mouseout", () => {
+                botoesFavoritar[controle].style.opacity = "0";
+            });
+        }
     }
 }
 
@@ -170,4 +187,12 @@ function verificaListaDeFavoritos() {
             }
         }
     }
+}
+
+function mostrarBotaoFavoritar(controle) {
+    botoesFavoritar[controle + 1].style.opacity = "1";
+}
+
+function esconderBotaoFavoritar(controle) {
+
 }
