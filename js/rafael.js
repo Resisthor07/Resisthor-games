@@ -9,7 +9,6 @@ function selecionaOpcRafael(opc)
         if(boolEduardo == 1)
         {
             selecionaOpc(1);
-            return;
         }
 
         return;
