@@ -11,7 +11,8 @@ function carregarMais(dados) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
         imagemBanner.className = "jogo-da-lista";
-        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}">           <a href="${dados[controleSamir].game_url}" target="_blank" id="banner-link">
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}" onclick="push_id(${dados[controleSamir].id})">         
+  <a href="${dados[controleSamir].game_url}" target="_blank" id="banner-link">
                                         <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>
                                     </a>`;
 
@@ -32,7 +33,7 @@ function carregarMais(dados) {
 
             stringLinhas += `
                             <li class="jogo-da-lista">
-                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
+                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}" onclick="push_id(${dados[controleSamir].id})">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -56,7 +57,7 @@ function carregarMais(dados) {
 
             jogosCarregados.insertAdjacentHTML("beforeend", `
                             <li class="jogo-da-lista">
-                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
+                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}" onclick="push_id(${dados[controleSamir].id})">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
