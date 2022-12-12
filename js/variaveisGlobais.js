@@ -16,6 +16,11 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
     console.log("Erro!");
 });
 
+let listaDeJogosFavoritos = [];
+let botoesFavoritar = [];
+let adicionadoFavoritosPreenchimento = [];
+let controleFav = 0;
+
 let dadosServidorHome;
 let listaExibida = document.getElementById("principal");
 let containerDeJogos = document.createElement("div");

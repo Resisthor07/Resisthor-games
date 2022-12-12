@@ -97,12 +97,6 @@ function chamarFuncoes(dadosDoServidor) {
     carregarMais(dadosDoServidor);
 }
 
-let listaDeJogosFavoritos = [];
-let botoesFavoritar = [];
-let adicionadoFavoritosPreenchimento = [];
-let controleFav = 0;
-
-
 function criaBotoesFavoritar() {
 
     for (; controleFav < controleSamir; controleFav++) {
