@@ -38,10 +38,9 @@ function fechaPopup() {
     pagina[0].style.filter = "none";
     boolRafael = 0;
     boolEduardo = 0;
-    menu = 0;
-    plataformaRafael = 0;
+    controladorRafael = -1;
+    controlaFiltro=0;
     selecionaFiltro(9);
     mudaEstiloRafael(4);
-    estilizaBotao(9);
 }
 
