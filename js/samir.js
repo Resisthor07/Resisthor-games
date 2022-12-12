@@ -1,6 +1,5 @@
 let jogosCarregados;
 
-
 function carregarMais(dados) {
 
     let stringHtml = "";
@@ -16,10 +15,15 @@ function carregarMais(dados) {
 
         controleSamir++;
 
-        for (i = 0; i < 9 && controleSamir < dados.length; i++) {
+        lengthArr = dados.length;
+
+        for (i = 0; i < 9 && controleSamir < lengthArr; i++) {
+
+            if (lengthArr <= 10) {
+                botaoCarregar.style.display = "none";
+            }
 
             if (dados[controleSamir] == undefined) {
-                botaoCarregar.style.display = "none";
                 return;
             }
 
@@ -171,4 +175,3 @@ function verificaListaDeFavoritos() {
         }
     }
 }
-
