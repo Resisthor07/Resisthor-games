@@ -64,7 +64,7 @@ function print_favorites() {
                 </a>
                   <div>
                 <img class="trash_favorites"  
-                src="../img/favoritos/387-3877752_free-trash-can-icon-free-trash-can-icon-removebg-preview.png" 
+                src="../img/favoritos/lixeira.png" 
                 alt="lixeira"  id="remove_lista" onclick= "remove_lista(${index})">
             </div>
         </div>
