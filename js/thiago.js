@@ -101,6 +101,7 @@ function remove_lista(index) {
     if (index !== -1) {
        console.log("lixeira");
         listaDeJogosFavoritos.splice(index, 1);
+        localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
         print_favorites();
     }
 

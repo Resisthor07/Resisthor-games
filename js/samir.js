@@ -138,14 +138,15 @@ function eventoFavoritar(controle) {
         retiraDosFavoritos(controle);
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_vazada.png");
         adicionadoFavoritosPreenchimento[controle] = false;
-        remove_lista();
+        remove_lista(index);
+        
 
     } else {
 
         adicionaAosFavoritos(controle);
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_preenchida.png");
         adicionadoFavoritosPreenchimento[controle] = true;
-        localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
+        //localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
         print_favorites();
 
     }
@@ -159,7 +160,7 @@ function adicionaAosFavoritos(controle) {
         for (i in listaDeJogosFavoritos) {
 
             if (dadosServidor[controle].id == listaDeJogosFavoritos[i].id) {
-                localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
+                
                 return;
             }
         }
@@ -167,7 +168,7 @@ function adicionaAosFavoritos(controle) {
 
     listaDeJogosFavoritos.push(dadosServidor[controle]);
     console.log(listaDeJogosFavoritos);
-
+    localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
 }
 
 function retiraDosFavoritos(controle) {
