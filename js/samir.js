@@ -11,7 +11,7 @@ function carregarMais(dados) {
 
         let imagemBanner = document.getElementById("samir-imagem-principal");
         imagemBanner.className = "jogo-da-lista";
-        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir}" onclick="push_id(${dados[controleSamir].id})">         
+        imagemBanner.innerHTML = `<img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" alt="favoritar" id="fav-${controleSamir} ">         
   <a href="${dados[controleSamir].game_url}" target="_blank" id="banner-link">
                                         <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}" id="banner"/>
                                     </a>`;
@@ -33,7 +33,7 @@ function carregarMais(dados) {
 
             stringLinhas += `
                             <li class="jogo-da-lista">
-                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}" onclick="push_id(${dados[controleSamir].id})">
+                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -57,7 +57,7 @@ function carregarMais(dados) {
 
             jogosCarregados.insertAdjacentHTML("beforeend", `
                             <li class="jogo-da-lista">
-                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}" onclick="push_id(${dados[controleSamir].id})">
+                                <img src="img/quadro_de_itens/estrela_vazada.png" class="botao-favoritos" id="fav-${controleSamir}">
                                 <a href="${dados[controleSamir].game_url}" target="_blank">
                                     <img src="${dados[controleSamir].thumbnail}" alt="${dados[controleSamir].title}">
                                 </a>
@@ -138,29 +138,35 @@ function eventoFavoritar(controle) {
         retiraDosFavoritos(controle);
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_vazada.png");
         adicionadoFavoritosPreenchimento[controle] = false;
+        remove_lista();
 
     } else {
 
         adicionaAosFavoritos(controle);
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_preenchida.png");
         adicionadoFavoritosPreenchimento[controle] = true;
+        localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
+        print_favorites();
 
     }
 }
 
 function adicionaAosFavoritos(controle) {
+    console.log("clicou no favorito ")
 
     if (listaDeJogosFavoritos != 0) {
 
         for (i in listaDeJogosFavoritos) {
 
             if (dadosServidor[controle].id == listaDeJogosFavoritos[i].id) {
+                localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
                 return;
             }
         }
     }
 
     listaDeJogosFavoritos.push(dadosServidor[controle]);
+    console.log(listaDeJogosFavoritos);
 
 }
 
