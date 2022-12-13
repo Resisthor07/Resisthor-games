@@ -57,7 +57,7 @@ function print_favorites() {
 
                 filho.innerHTML = `
         <div class="thiagoOrganizafavoritos">
-            <a href="${listaDeJogosFavoritos[index].game_url}" class="thiagolink_favorites">
+            <a href="${listaDeJogosFavoritos[index].game_url}" class="thiagolink_favorites" target="_blank">
                 <img  class="ThiagoImgFavoritos" src=" ${listaDeJogosFavoritos[index].thumbnail}" >           
           
                 <p class="thiagoname_favorite"> ${listaDeJogosFavoritos[index].title}</p>
