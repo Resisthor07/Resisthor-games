@@ -63,8 +63,7 @@ function print_favorites() {
                 <p class="thiagoname_favorite"> ${listaDeJogosFavoritos[index].title}</p>
                 </a>
                   <div>
-                <img class="trash_favorites"  src="../img/favoritos/lixeira.png" 
-                alt="lixeira"  id="remove_lista" onclick= "remove_lista(${index})">
+                <img class="trash_favorites"  src="img/favoritos/lixeira.png" alt="lixeira"  id="remove_lista" onclick= "remove_lista(${index})">
             </div>
         </div>
         `
