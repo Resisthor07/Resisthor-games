@@ -61,6 +61,8 @@
     font-size: 2vw;
 }
 .thiagoname_favorite{
+    display: flex;
+    flex-wrap: wrap;
    text-align: center;
     margin: 0.2vw;
     font-size: 1vw;
