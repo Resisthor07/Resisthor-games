@@ -10,14 +10,14 @@ const pai = document.getElementById("ListaFavoritos");
 
 function carrega_localStorage()
 {
-    window.onload = function () {
+
         if (localStorage.getItem("lista_jogos") != null) {
             listaDeJogosFavoritos = JSON.parse(localStorage.getItem("lista_jogos") || "[]");
             //console.log(preferidos);
             print_favorites();
         }
 
-    }
+
 }
 /*function push_id(id) {
     if (preferidos.includes(id) === true) {
