@@ -39,10 +39,9 @@ function selecionaOpcRafael(opc)
         controladorRafael = opc;
         plataformaRafael = "browser";
         mudaEstiloRafael(opc);
-        
+
         if(boolRafael == 1 && boolEduardo == 1) 
         {
-            estilizaBotao(8);
             filtroTailyne();    
             return;
         }
@@ -56,11 +55,10 @@ function selecionaOpcRafael(opc)
         controladorRafael = opc;
         plataformaRafael = "all";
         mudaEstiloRafael(opc);
-        estilizaBotao(opc - 1);
+        
 
         if(boolRafael == 1 && boolEduardo == 1) 
         {
-            estilizaBotao(8);
             filtroTailyne();    
             return;
         }
@@ -73,8 +71,8 @@ function selecionaOpcRafael(opc)
         controladorRafael = -1;
         console.log("entrou");
         mudaEstiloRafael(opc);
+        estilizaBotao(opc - 1);
         openPopupFavorites();
-        estilizaBotao(8);
 
         boolRafael = 0;
         return;
