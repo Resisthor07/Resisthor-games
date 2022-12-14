@@ -1,5 +1,4 @@
-let recebe_section = document.getElementById("exibe_filtro");
-let botaoTailyne = document.getElementById("botaoFechar");
+
 botaoTailyne.addEventListener("click", fechaPopup);
 
 function filtroTailyne(){
