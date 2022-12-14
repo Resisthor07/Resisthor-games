@@ -1,5 +1,3 @@
-let recebe_section = document.getElementById("exibe_filtro");
-let botaoTailyne = document.getElementById("botaoFechar");
 botaoTailyne.addEventListener("click", fechaPopup);
 
 function filtroTailyne(){
@@ -38,11 +36,7 @@ function fechaPopup() {
     pagina[0].style.filter = "none";
     boolRafael = 0;
     boolEduardo = 0;
-<<<<<<< HEAD
     controladorRafael=-1;
-=======
-    controladorRafael = -1;
->>>>>>> 3c7d107a35ae4df1f5519947fac5a39f438b6665
     controlaFiltro=0;
     selecionaFiltro(9);
     mudaEstiloRafael(4);
