@@ -55,6 +55,7 @@ function selecionaOpcRafael(opc)
         controladorRafael = opc;
         plataformaRafael = "all";
         mudaEstiloRafael(opc);
+        
 
         if(boolRafael == 1 && boolEduardo == 1) 
         {
@@ -70,7 +71,7 @@ function selecionaOpcRafael(opc)
         controladorRafael = -1;
         console.log("entrou");
         mudaEstiloRafael(opc);
-
+        estilizaBotao(opc - 1);
         openPopupFavorites();
 
         boolRafael = 0;

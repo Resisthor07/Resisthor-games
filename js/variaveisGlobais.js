@@ -112,3 +112,9 @@ botao[6].addEventListener("click", () => selecionaFiltro(7));
 botao[7].addEventListener("click", () => selecionaFiltro(8));
 
 //Fim das Variaveis globais Eduardo
+
+/* Variáveis globais de Tailyne */
+let recebe_section = document.getElementById("exibe_filtro");
+let botaoTailyne = document.getElementById("botaoFechar");
+
+/* Fim das variáveis de Tailyne */

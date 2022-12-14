@@ -126,6 +126,7 @@ function selecionaFiltro(opc) {
         controlaFiltro = opc;
         boolEduardo = 0;
         estilizaBotao(opc - 1);
+        mudaEstiloRafael(opc);
         selecionaOpc(9);
         return;
     }
