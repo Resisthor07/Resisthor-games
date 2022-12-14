@@ -10,7 +10,9 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
     response.json().then(dados => {
         dadosServidor = dados;
         dadosServidorHome = dados;
+        lista_favoritos=dados;
         carregarMais(dadosServidor);
+        carrega_localStorage();
     });
 }).catch((err) => {
     console.log("Erro!");
@@ -63,6 +65,8 @@ elementosRafael[3].addEventListener("click", () => selecionaOpcRafael(3));
 
 /*Fim variaveis globais Rafael*/
 
+let lista_favoritos;
+
 /* Variaveis Globais Eduardo*/
 
 let decimoItem=0;
@@ -108,3 +112,9 @@ botao[6].addEventListener("click", () => selecionaFiltro(7));
 botao[7].addEventListener("click", () => selecionaFiltro(8));
 
 //Fim das Variaveis globais Eduardo
+
+/* Variáveis globais de Tailyne */
+let recebe_section = document.getElementById("exibe_filtro");
+let botaoTailyne = document.getElementById("botaoFechar");
+
+/* Fim das variáveis de Tailyne */
