@@ -71,6 +71,15 @@
 }
 .ListaFavoritos{
     flex-direction: row;
+    width: 100%;
+    min-height: 5vh;
+    max-height: 100vh;
+    overflow-y: scroll;
+
+}
+
+.ListaFavoritos::-webkit-scrollbar-track{
+    display: none;
 }
 .thiagoOrganizafavoritos{
     display: flex;
