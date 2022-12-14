@@ -139,7 +139,7 @@ function eventoFavoritar(controle) {
         botoesFavoritar[controle].setAttribute("src", "img/quadro_de_itens/estrela_vazada.png");
         adicionadoFavoritosPreenchimento[controle] = false;
         remove_lista(index);
-        
+
 
     } else {
 
@@ -160,7 +160,7 @@ function adicionaAosFavoritos(controle) {
         for (i in listaDeJogosFavoritos) {
 
             if (dadosServidor[controle].id == listaDeJogosFavoritos[i].id) {
-                
+
                 return;
             }
         }
@@ -180,6 +180,8 @@ function retiraDosFavoritos(controle) {
         if (idBuscado == listaDeJogosFavoritos[i].id) {
 
             listaDeJogosFavoritos.splice(i, 1);
+            localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
+
         }
     }
 }

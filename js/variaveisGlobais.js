@@ -10,7 +10,9 @@ const dadosRece = fetch('https://free-to-play-games-database.p.rapidapi.com/api/
     response.json().then(dados => {
         dadosServidor = dados;
         dadosServidorHome = dados;
+        lista_favoritos=dados;
         carregarMais(dadosServidor);
+        carrega_localStorage();
     });
 }).catch((err) => {
     console.log("Erro!");
@@ -62,6 +64,8 @@ elementosRafael[2].addEventListener("click", () => selecionaOpcRafael(2));
 elementosRafael[3].addEventListener("click", () => selecionaOpcRafael(3));
 
 /*Fim variaveis globais Rafael*/
+
+let lista_favoritos;
 
 /* Variaveis Globais Eduardo*/
 

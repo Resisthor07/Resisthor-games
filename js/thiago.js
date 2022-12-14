@@ -8,13 +8,16 @@ const removeLista = document.getElementById("remove_lista");
 const closeFavorites = document.getElementById("close_favorites");
 const pai = document.getElementById("ListaFavoritos");
 
-window.onload = function () {
-    if (localStorage.getItem("lista_jogos") != null) {
-        listaDeJogosFavoritos = JSON.parse(localStorage.getItem("lista_jogos") || "[]");
-        //console.log(preferidos);
-        print_favorites();
-    }
+function carrega_localStorage()
+{
+    window.onload = function () {
+        if (localStorage.getItem("lista_jogos") != null) {
+            listaDeJogosFavoritos = JSON.parse(localStorage.getItem("lista_jogos") || "[]");
+            //console.log(preferidos);
+            print_favorites();
+        }
 
+    }
 }
 /*function push_id(id) {
     if (preferidos.includes(id) === true) {
@@ -63,7 +66,8 @@ function print_favorites() {
                 <p class="thiagoname_favorite"> ${listaDeJogosFavoritos[index].title}</p>
                 </a>
                   <div>
-                <img class="trash_favorites"  src="img/favoritos/lixeira.png" alt="lixeira"  id="remove_lista" onclick= "remove_lista(${index})">
+                <img class="trash_favorites"  src="img/favoritos/lixeira.png" alt="lixeira"  id="remove_lista" 
+                onclick= "remove_lista(${index})">
             </div>
         </div>
         `
@@ -101,6 +105,8 @@ function remove_lista(index) {
         listaDeJogosFavoritos.splice(index, 1);
         localStorage.setItem("lista_jogos", JSON.stringify(listaDeJogosFavoritos));
         print_favorites();
+        botoesFavoritar[index].setAttribute("src", "img/quadro_de_itens/estrela_vazada.png");
+        adicionadoFavoritosPreenchimento[index] = false;
     }
 
 
